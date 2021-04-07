@@ -101,7 +101,7 @@ cnt.most_common()
 # In[12]:
 
 
-from wordcloud import WordCloud
+# from wordcloud import WordCloud
 
 
 # In[13]:
@@ -138,25 +138,53 @@ for word, time in cnt.most_common():
 
 # In[38]:
 
-import matplotlib
-matplotlib.rcParams['font.sans-serif']=['SimHei']   # 用黑体显示中文
-matplotlib.rcParams['axes.unicode_minus']=False     # 正常显示负号
+def get_plot():
+    import matplotlib
+    matplotlib.rcParams['font.sans-serif']=['SimHei']   # 用黑体显示中文
+    matplotlib.rcParams['axes.unicode_minus']=False     # 正常显示负号
 
-from nltk.probability import FreqDist
+    from nltk.probability import FreqDist
 
-frqdist = FreqDist(cnt)
+    frqdist = FreqDist(cnt)
 
-plt.figure(figsize=(16, 8))
-plt.grid(False)
-frqdist.plot(80)
-plt.show()
+    plt.figure(figsize=(16, 8))
+    plt.grid(False)
+    frqdist.plot(80)
+    plt.show()
 
-plt.figure(figsize=(16, 8))
-plt.grid(False)
-frqdist.plot(80, cumulative=True)
+    plt.figure(figsize=(16, 8))
+    plt.grid(False)
+    frqdist.plot(80, cumulative=True)
 
 # In[ ]:
 
+def get_word_length(cnt):
+    len_cnt = {}
+    res = 0
+    for word, time in cnt.most_common():
+        if len(word) in len_cnt:
+            len_cnt[len(word)] += time
+        else:
+            len_cnt[len(word)] = time
+    return len_cnt
 
+len_cnt = get_word_length(cnt)
+print(len_cnt)
 
+def avg_length():
+    res = 0
+    return res
 
+def plot_length_cnt():
+    import matplotlib
+    matplotlib.rcParams['font.sans-serif']=['Hacker']   # 用黑体显示中文
+    matplotlib.rcParams['axes.unicode_minus']=False     # 正常显示负号
+    from nltk.probability import FreqDist
+
+    frqdist = FreqDist(cnt)
+
+    plt.figure(figsize=(16, 8))
+    frqdist.plot(80)
+    plt.savefig('训练集词长度频率分布.png')
+
+plot_length_cnt()

@@ -54,8 +54,8 @@ def show5():
 
 # 查看前5个的效果
 # show5()
-with open(os.path.join(RESULTROOT, 'max-back-result.txt'), 'w+', encoding='utf-8') as f:
+# with open(os.path.join(RESULTROOT, 'max-back-result.txt'), 'w+', encoding='utf-8') as f:
 
-    result = '\n'.join(['  '.join(max_back(line)) for line in test_raw])
-    f.write(result)
+#     result = '\n'.join(['  '.join(max_back(line)) for line in test_raw])
+#     f.write(result)
 

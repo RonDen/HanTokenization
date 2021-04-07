@@ -3,3 +3,4 @@ jieba
 matplotlib
 seabon
 jupyter
+nltk
