@@ -1,0 +1,5 @@
+numpy
+jieba
+matplotlib
+seabon
+jupyter

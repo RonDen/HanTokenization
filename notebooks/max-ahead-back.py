@@ -43,8 +43,19 @@ def max_back(line: str, max_len = 4):
                 lens = max_len
             else:
                 lens -= 1
+                if lens == 0:
+                    idx += 1
     return res
 
+def show5():
+    for i in range(5):
+        print(test_raw[i])
+        print(max_back(test_raw[i]))
+
+# 查看前5个的效果
+# show5()
 with open(os.path.join(RESULTROOT, 'max-back-result.txt'), 'w+', encoding='utf-8') as f:
-    f.write('\n'.join([max_back(line) for line in test_raw]))
+
+    result = '\n'.join(['  '.join(max_back(line)) for line in test_raw])
+    f.write(result)
 
