@@ -1,5 +1,6 @@
 import os
 import jieba
+from collections import Counter
 
 DATAROOT = '../datasets'
 RESULTROOT = '../results'
@@ -34,20 +35,53 @@ with open(TEST_FILE, 'r', encoding='utf-8') as f:
 # print("ten item of test set")
 # print(test_set[:5])
 
+
+
 jieba.set_dictionary(VOCAB_FREQ)
 
 train_set_split = [line.split('  ') for line in train_set]
 test_set_split = [line.split('  ') for line in test_set]
 
+
 train_raw = [''.join(line) for line in train_set_split]
 test_raw = [''.join(line) for line in test_set_split]
 
-# for line in train_raw[:5]:
-#     print('  '.join(jieba.cut(line)))
+cnt = Counter()
+for line in train_set_split:
+    cnt.update(line)
+
+with open(VOCAB_FREQ, 'w+', encoding='utf-8') as f:
+    result = '\n'.join([' '.join([word, str(freq), 'n']) for word, freq in cnt.most_common() if word])
+    f.writelines(result)
+    
+
+def seg_hmm():
+    result_file = os.path.join(RESULTROOT, 'jieba-test-result-hmm.txt')
+    with open(result_file, 'w+', encoding='utf-8') as f:
+        f.writelines(['  '.join(jieba.cut(line)) + '\n' for line in test_raw])
+
+def seg_no_hmm():
+    result_file = os.path.join(RESULTROOT, 'jieba-test-result-no-hmm.txt')
+    with open(result_file, 'w+', encoding='utf-8') as f:
+        f.writelines(['  '.join(jieba.cut(line, HMM=False)) + '\n' for line in test_raw])
+
+def seg_with_paddle_no_hmm():
+    result_file = os.path.join(RESULTROOT, 'jieba-test-result-paddle-no-hmm.txt')
+    with open(result_file, 'w+', encoding='utf-8') as f:
+        f.writelines(['  '.join(jieba.cut(line, HMM=False, use_paddle=True)) + '\n' for line in test_raw])
+
+def seg_with_paddle_hmm():
+    result_file = os.path.join(RESULTROOT, 'jieba-test-result-paddle-hmm.txt')
+    with open(result_file, 'w+', encoding='utf-8') as f:
+        f.writelines(['  '.join(jieba.cut(line, HMM=True, use_paddle=True)) + '\n' for line in test_raw])
 
 def write_test_result():
     with open(RESULT_FILE_TEST_IM, 'w+', encoding='utf-8') as f:
         f.writelines(['  '.join(jieba.cut(line)) + '\n' for line in test_raw])
 
-write_test_result()
+# write_test_result()
 
+seg_hmm()
+seg_no_hmm()
+seg_with_paddle_hmm()
+seg_with_paddle_no_hmm()

@@ -1,0 +1,40 @@
+jieba without dictionary eval result
+RECALL:	0.787
+PRECISION:	0.853
+F1 :	0.818
+
+OOV Rate:	0.058
+OOV Recall:	0.583
+IV Recall:	0.799
+jieba with dictionary eval result
+RECALL:	0.866
+PRECISION:	0.887
+F1 :	0.877
+
+OOV Rate:	0.058
+OOV Recall:	0.434
+IV Recall:	0.893
+jieba with dictionary no hmm eval result
+RECALL:	0.924
+PRECISION:	0.881
+F1 :	0.902
+
+OOV Rate:	0.058
+OOV Recall:	0.193
+IV Recall:	0.968
+jieba with dictionary paddle no hmm eval result
+RECALL:	0.924
+PRECISION:	0.881
+F1 :	0.902
+
+OOV Rate:	0.058
+OOV Recall:	0.193
+IV Recall:	0.968
+jieba with dictionary paddle with hmm eval result
+RECALL:	0.866
+PRECISION:	0.887
+F1 :	0.877
+
+OOV Rate:	0.058
+OOV Recall:	0.434
+IV Recall:	0.893
