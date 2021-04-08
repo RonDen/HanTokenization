@@ -82,6 +82,9 @@ def write_test_result():
 # write_test_result()
 
 seg_hmm()
-seg_no_hmm()
-seg_with_paddle_hmm()
-seg_with_paddle_no_hmm()
+# seg_no_hmm()
+# seg_with_paddle_hmm()
+# seg_with_paddle_no_hmm()
+# import pdb
+# pdb.set_trace()
+# res = jieba.cut(test_raw[0])
