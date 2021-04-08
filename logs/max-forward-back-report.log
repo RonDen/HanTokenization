@@ -1,0 +1,48 @@
+max-back, max_len = 3
+RECALL:	0.905
+PRECISION:	0.892
+F1 :	0.899
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.960
+max-back, max_len = 4
+RECALL:	0.905
+PRECISION:	0.892
+F1 :	0.899
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.960
+max-back, max_len = 5
+RECALL:	0.905
+PRECISION:	0.892
+F1 :	0.899
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.960
+max-forward, max_len = 3
+RECALL:	0.903
+PRECISION:	0.890
+F1 :	0.896
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+max-forward, max_len = 4
+RECALL:	0.903
+PRECISION:	0.890
+F1 :	0.896
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+max-forward, max_len = 5
+RECALL:	0.903
+PRECISION:	0.890
+F1 :	0.896
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
