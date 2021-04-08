@@ -160,7 +160,6 @@ def get_plot():
 
 def get_word_length(cnt):
     len_cnt = {}
-    res = 0
     for word, time in cnt.most_common():
         if len(word) in len_cnt:
             len_cnt[len(word)] += time
@@ -173,18 +172,32 @@ print(len_cnt)
 
 def avg_length():
     res = 0
-    return res
+    tot_word = 0
+    for k in len_cnt:
+        res += k * len_cnt[k]
+        tot_word += len_cnt[k]
+    return res / tot_word
+
+avg_len = avg_length()
+# 1.645548579259047
+print(avg_len)
 
 def plot_length_cnt():
     import matplotlib
-    matplotlib.rcParams['font.sans-serif']=['Hacker']   # 用黑体显示中文
+    matplotlib.rcParams['font.sans-serif']=['SimHei']   # 用黑体显示中文
     matplotlib.rcParams['axes.unicode_minus']=False     # 正常显示负号
     from nltk.probability import FreqDist
 
-    frqdist = FreqDist(cnt)
+    frqdist = FreqDist(len_cnt)
 
     plt.figure(figsize=(16, 8))
-    frqdist.plot(80)
+    frqdist.plot(len(len_cnt))
     plt.savefig('训练集词长度频率分布.png')
+    plt.show()
+
+    plt.figure(figsize=(16, 8))
+    frqdist.plot(len(len_cnt), cumulative=True)
+    plt.savefig('训练集词长度频率分布-累加.png')
+    plt.show()
 
 plot_length_cnt()
