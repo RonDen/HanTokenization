@@ -1,0 +1,80 @@
+nohup: ignoring input
+Vocabulary Size:  3941
+Start training.
+Loading the Glove Embedding...
+Embedding size:  300
+4 GPUs are available. Let's use them.
+--------------- The 1-th fold as the validation set... ---------------
+Epoch id: 1, Training steps: 100, Loss: 0.580712
+Epoch id: 1, Training steps: 200, Loss: 0.321584
+Epoch id: 1, Training steps: 300, Loss: 0.469498
+Epoch id: 1, Training steps: 400, Loss: 0.263228
+total_right, total_predict, predict_right: 223659, 225690, 203727
+precision, recall, and f1: 0.903, 0.911, 0.907
+Epoch id: 2, Training steps: 100, Loss: 0.246915
+Epoch id: 2, Training steps: 200, Loss: 0.224725
+Epoch id: 2, Training steps: 300, Loss: 0.237532
+Epoch id: 2, Training steps: 400, Loss: 0.215497
+total_right, total_predict, predict_right: 223659, 224367, 208645
+precision, recall, and f1: 0.930, 0.933, 0.931
+Epoch id: 3, Training steps: 100, Loss: 0.131669
+Epoch id: 3, Training steps: 200, Loss: 0.130774
+Epoch id: 3, Training steps: 300, Loss: 0.134580
+Epoch id: 3, Training steps: 400, Loss: 0.126950
+total_right, total_predict, predict_right: 223659, 223811, 210325
+precision, recall, and f1: 0.940, 0.940, 0.940
+Epoch id: 4, Training steps: 100, Loss: 0.098489
+Epoch id: 4, Training steps: 200, Loss: 0.118929
+Epoch id: 4, Training steps: 300, Loss: 0.087604
+Epoch id: 4, Training steps: 400, Loss: 0.114549
+total_right, total_predict, predict_right: 223659, 222949, 210988
+precision, recall, and f1: 0.946, 0.943, 0.945
+Epoch id: 5, Training steps: 100, Loss: 0.075877
+Epoch id: 5, Training steps: 200, Loss: 0.040725
+Epoch id: 5, Training steps: 300, Loss: 0.056769
+Epoch id: 5, Training steps: 400, Loss: 0.061021
+total_right, total_predict, predict_right: 223659, 222517, 211242
+precision, recall, and f1: 0.949, 0.944, 0.947
+Epoch id: 6, Training steps: 100, Loss: 0.051403
+Epoch id: 6, Training steps: 200, Loss: 0.050725
+Epoch id: 6, Training steps: 300, Loss: 0.052145
+Epoch id: 6, Training steps: 400, Loss: 0.045123
+total_right, total_predict, predict_right: 223659, 223342, 211561
+precision, recall, and f1: 0.947, 0.946, 0.947
+Epoch id: 7, Training steps: 100, Loss: 0.034761
+Epoch id: 7, Training steps: 200, Loss: 0.024992
+Epoch id: 7, Training steps: 300, Loss: 0.046060
+Epoch id: 7, Training steps: 400, Loss: 0.037031
+total_right, total_predict, predict_right: 223659, 224803, 212208
+precision, recall, and f1: 0.944, 0.949, 0.946
+Epoch id: 8, Training steps: 100, Loss: 0.023261
+Epoch id: 8, Training steps: 200, Loss: 0.034249
+Epoch id: 8, Training steps: 300, Loss: 0.017448
+Epoch id: 8, Training steps: 400, Loss: 0.029832
+total_right, total_predict, predict_right: 223659, 223751, 211890
+precision, recall, and f1: 0.947, 0.947, 0.947
+Epoch id: 9, Training steps: 100, Loss: 0.023696
+Epoch id: 9, Training steps: 200, Loss: 0.020728
+Epoch id: 9, Training steps: 300, Loss: 0.020530
+Epoch id: 9, Training steps: 400, Loss: 0.023103
+total_right, total_predict, predict_right: 223659, 222438, 211442
+precision, recall, and f1: 0.951, 0.945, 0.948
+Epoch id: 10, Training steps: 100, Loss: 0.024555
+Epoch id: 10, Training steps: 200, Loss: 0.007272
+Epoch id: 10, Training steps: 300, Loss: 0.018651
+Epoch id: 10, Training steps: 400, Loss: 0.012458
+total_right, total_predict, predict_right: 223659, 224515, 212559
+precision, recall, and f1: 0.947, 0.950, 0.949
+Start evaluation.
+total_right, total_predict, predict_right: 104371, 104191, 96538
+precision, recall, and f1: 0.927, 0.925, 0.926
+Loading the Glove Embedding...
+Embedding size:  300
+4 GPUs are available. Let's use them.
+--------------- The 2-th fold as the validation set... ---------------
+Epoch id: 1, Training steps: 100, Loss: 0.523005
+Epoch id: 1, Training steps: 200, Loss: 0.382489
+Epoch id: 1, Training steps: 300, Loss: 0.370691
+Epoch id: 1, Training steps: 400, Loss: 0.257176
+total_right, total_predict, predict_right: 225406, 226069, 204121
+precision, recall, and f1: 0.903, 0.906, 0.904

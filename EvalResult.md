@@ -22,3 +22,15 @@ OOV Rate:       0.058
 OOV Recall:     0.000
 IV Recall:      0.958
 ```
+
+### Bi-LSTM
+
+```txt
+RECALL: 0.925
+PRECISION:      0.926
+F1 :    0.925
+
+OOV Rate:       0.058
+OOV Recall:     0.642
+IV Recall:      0.942
+```
