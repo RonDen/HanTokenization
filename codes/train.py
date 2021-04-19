@@ -68,7 +68,7 @@ def load_parameters():
 
     # Model options.
     parser.add_argument("--model_type", 
-        choices=["bilstm"],
+        choices=["bilstm", "bilstmcrf"],
         default="bilstm",
         help="What kind of model do you want to use.")
     parser.add_argument("--batch_size", type=int, default=batch_size,
@@ -109,6 +109,7 @@ def load_parameters():
     args.vocab_len = len(vocab)
 
     if torch.cuda.is_available(): args.use_cuda = True
+    args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     return args
 
@@ -125,7 +126,6 @@ def build_model(args):
     model.embedding.weight.data.copy_(embed_weight)
 
     # For simplicity, we use DataParallel wrapper to use multiple GPUs.
-    args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if torch.cuda.device_count() > 1:
         print("{} GPUs are available. Let's use them.".format(torch.cuda.device_count()))
         model = nn.DataParallel(model)
@@ -167,7 +167,12 @@ def evaluate(model, args, is_test, k_idx=None):
         sent_ids = sent_ids.to(args.device)
 
         feats = model(sent_ids, sent_lens)
-        best_path = torch.argmax(feats, dim = -1).view(-1, sent_ids.size(1))
+        if hasattr(model, "get_best_path"):
+            #print("Using the get_best_path func in the model...")
+            best_path = model.get_best_path(feats, sent_lens)
+        else:
+            #print("Using the default get_best_path func...")
+            best_path = torch.argmax(feats, dim = -1).view(-1, sent_ids.size(1))
 
         for j in range(0, len(sent_ids)):
             text, gold_tags = sents[j], [str(args.label_list[int(p)]) for p in sent_labels[j]]
@@ -256,12 +261,11 @@ def evaluate(model, args, is_test, k_idx=None):
 
 # Training function.
 def train_kfold(args):
-    total_loss, f1, best_f1 = 0., 0., 0.
-    
     # Training phase.
     print("Start training.")
     
     for k_idx in range(args.K):
+        total_loss, f1, best_f1 = 0., 0., 0.
 
         model = build_model(args)
 
@@ -271,10 +275,17 @@ def train_kfold(args):
             best_f1 = evaluate(model, args, True)
 
         # Criterion.
-        weight = [50.0] * args.label_number
-        weight[label_dict["O"]] = 1.0
-        weight = torch.tensor(weight).to(args.device)
-        criterion = CrossEntropyLoss(weight, reduction="mean")
+        default_criterion_flag = True
+        if hasattr(model, "criterion"):
+            print("Using the criterion func in the model...")
+            criterion = model.criterion
+            default_criterion_flag = False
+        else:
+            print("Using the default criterion func...")
+            weight = [50.0] * args.label_number
+            weight[label_dict["O"]] = 1.0
+            weight = torch.tensor(weight).to(args.device)
+            criterion = CrossEntropyLoss(weight, reduction="mean")
 
         # Optimizer.
         optimizer = Adam(model.parameters())
@@ -295,11 +306,14 @@ def train_kfold(args):
 
                 sents, sent_ids, sent_lens, sent_labels = batch
                 sent_ids = sent_ids.to(args.device)
-                sent_labels = sent_labels.to(args.device).view(-1)
+                sent_labels = sent_labels.to(args.device)
 
                 feats = model(sent_ids, sent_lens)
 
-                loss = criterion(feats.contiguous().view(-1, args.label_number), sent_labels)
+                if default_criterion_flag:
+                    loss = criterion(feats.contiguous().view(-1, args.label_number), sent_labels.view(-1))
+                else:
+                    loss = criterion(feats, sent_lens, sent_labels)
 
                 if (i + 1) % args.report_steps == 0:
                     print("Epoch id: {}, Training steps: {}, Loss: {:.6f}".format(epoch, i+1, loss))

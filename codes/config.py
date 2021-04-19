@@ -34,6 +34,6 @@ learning_rate = 1e-4
 dropout = 0.1
 lstm_layers = 2
 lstm_hidden = 300
-epochs_num = 10
+epochs_num = 50
 report_steps = 100
 seed = 7
