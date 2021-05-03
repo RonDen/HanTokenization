@@ -17,7 +17,7 @@ from codes.vocab import Vocab
 """ SIGHAN Dataset. """
 
 class SighanDataset(Dataset):
-    def __init__(self, state=TRAIN, index=0, k_fold=K, vocab_path="../pretrained_models/Glove/vocab.txt", update=False):
+    def __init__(self, state=TRAIN, index=0, k_fold=K, vocab_path="../pretrained_models/Glove/vocab.txt", update=False, merge=False):
         """ 
             The Sighan Dataset.
 
@@ -70,9 +70,17 @@ class SighanDataset(Dataset):
                     assert len(sentence) == len(label)
                     if len(sentence) > self.max_length:
                         self.max_length = len(sentence)
-                    sentence_id = [self.vocab.get(t, punc_flag) for t in sentence]
+                    if merge == True:
+                        sentence, sentence_train, label = self.merge_special_tokens([w for w in sentence], label)
+                        # print(sentence, sentence_train, label)
+                        # if idx > 0:
+                        #     exit()
+                    else:
+                        sentence = [w for w in sentence]
+                        sentence_train = sentence
+                    sentence_id = [self.vocab.get(t, punc_flag) for t in sentence_train]
                     if len(sentence) == 0: continue
-                    data_str = json.dumps({"sentence": sentence, "sentence_id": sentence_id, "label": label}, ensure_ascii=False)
+                    data_str = json.dumps({"sentence": sentence, "sentence_train": sentence_train, "sentence_id": sentence_id, "label": label}, ensure_ascii=False)
                     #print(data_str)
                     fw.write(data_str + "\n")
             
@@ -109,6 +117,122 @@ class SighanDataset(Dataset):
         
         return
     
+    def merge_special_tokens(self, word_list, label):
+        """ 
+            Merge the special tokens in word_list.
+
+            Args:
+
+                word_list:              The word list.
+                label:                  The label list.
+            
+            Returns:
+
+                word_list_new:          list with original tokens.
+                word_list_mask:         list with mask tokens. ([NUM], [ALP])
+                label_new:              new label list
+        """
+        half_numbers_list = [n for n in half_numbers]
+        full_numbers_list = [n for n in full_numbers]
+        chinese_numbers_list = [c for c in chinese_numbers]
+        alphabet_list = [a for a in alphabet]
+        serial_punc_list = [p for p in serial_punc]
+
+        word_list_new, word_list_mask, label_new = [], [], []
+
+        begin, word_list_len = 0, len(word_list)
+
+        while begin < word_list_len:
+            token = word_list[begin]
+            if token not in half_numbers_list and token not in full_numbers_list and token not in alphabet_list and token not in serial_punc_list and token not in chinese_numbers_list:
+                word_list_new.append(token)
+                word_list_mask.append(token)
+                label_new.append(label[begin])
+                begin += 1
+                continue
+            if token in half_numbers_list:
+                end = begin + 1
+                while end < word_list_len:
+                    if word_list[end] in half_numbers_list:
+                        end += 1
+                    else: break
+                word_list_new.append("".join(word_list[begin:end]))
+                word_list_mask.append("[NUM]")
+                """ if self.get_new_label(begin, end-1, label[begin], label[end-1]) == label_dict["O"]:
+                    print(word_list[begin:end]) """
+                label_new.append(self.get_new_label(begin, end-1, label[begin], label[end-1]))
+                begin = end
+            elif token in full_numbers_list:
+                end = begin + 1
+                while end < word_list_len:
+                    if word_list[end] in full_numbers_list:
+                        end += 1
+                    else: break
+                word_list_new.append("".join(word_list[begin:end]))
+                word_list_mask.append("[NUM]")
+                """ if self.get_new_label(begin, end-1, label[begin], label[end-1]) == label_dict["O"]:
+                    print(word_list[begin:end]) """
+                label_new.append(self.get_new_label(begin, end-1, label[begin], label[end-1]))
+                begin = end
+            elif token in chinese_numbers_list:
+                end = begin + 1
+                while end < word_list_len:
+                    if word_list[end] in chinese_numbers_list:
+                        end += 1
+                    else: break
+                word_list_new.append("".join(word_list[begin:end]))
+                word_list_mask.append("[NUM]")
+                """ if self.get_new_label(begin, end-1, label[begin], label[end-1]) == label_dict["O"]:
+                    print(word_list[begin:end]) """
+                label_new.append(self.get_new_label(begin, end-1, label[begin], label[end-1]))
+                begin = end
+            elif token in alphabet_list:
+                end = begin + 1
+                while end < word_list_len:
+                    if word_list[end] in alphabet_list:
+                        end += 1
+                    else: break
+                word_list_new.append("".join(word_list[begin:end]))
+                word_list_mask.append("[ALP]")
+                """ if self.get_new_label(begin, end-1, label[begin], label[end-1]) == label_dict["O"]:
+                    print(word_list[begin:end]) """
+                label_new.append(self.get_new_label(begin, end-1, label[begin], label[end-1]))
+                begin = end
+            elif token in serial_punc_list:
+                end = begin + 1
+                while end < word_list_len:
+                    if word_list[end] in serial_punc_list:
+                        end += 1
+                    else: break
+                word_list_new.append("".join(word_list[begin:end]))
+                word_list_mask.append("[PUNC]")
+                """ if self.get_new_label(begin, end-1, label[begin], label[end-1]) == label_dict["O"]:
+                    print(word_list[begin:end]) """
+                label_new.append(self.get_new_label(begin, end-1, label[begin], label[end-1]))
+                begin = end
+        
+        return word_list_new, word_list_mask, label_new
+    
+    def get_new_label(self, begin_idx, end_idx, label_begin, label_end):
+        if begin_idx == end_idx: return label_begin
+
+        if label_begin == label_dict["B"]:
+            if label_end == label_dict["I"]: return label_dict["B"]
+            elif label_end == label_dict["E"]: return label_dict["S"]
+            else: 
+                # print("Error when getting new label! label_begin: {}, label_end: {}".format(label_begin, label_end))
+                return label_dict["O"]
+        elif label_begin == label_dict["I"]:
+            if label_end == label_dict["I"]: return label_dict["I"]
+            elif label_end == label_dict["E"]: return label_dict["E"]
+            else:
+                # print("Error when getting new label! label_begin: {}, label_end: {}".format(label_begin, label_end))
+                return label_dict["O"]
+        else:
+            # Single or End
+            # print("Error when getting new label! label_begin: {}, label_end: {}".format(label_begin, label_end))
+            return label_dict["O"]
+
     def __getitem__(self, index):
         return self.sentence[index], self.sentence_id[index], self.label[index]
     
@@ -136,7 +260,7 @@ def collate_fn(batch):
     return sent_seq, padded_sent_id_seq, data_length, padded_label
 
 if __name__ == "__main__":
-    sighan_dataset = SighanDataset(TEST, 0, 10)
+    sighan_dataset = SighanDataset(TEST, 0, 10, update=True, merge=True)
     sighan_data_loader = DataLoader(sighan_dataset, batch_size=2, shuffle=False, collate_fn=collate_fn)
     for batch in sighan_data_loader:
         print(batch[0])

@@ -95,10 +95,13 @@ def load_parameters():
                         help="Random seed.")
     parser.add_argument("--K", type=int, default=K,
                         help="K fold.")
+    parser.add_argument("--merge", type=int, default=0,
+                        help="If merge. 0->False, 1->True")
     
     args = parser.parse_args()
 
     args.lstm_dropout = args.dropout
+    args.merge = True if args.merge == 1 else False
 
     # Labels list.
     args.label_dict, args.label_list, args.label_number = label_dict, label_list, label_number
@@ -146,7 +149,7 @@ def build_model(args):
 def evaluate(model, args, is_test, k_idx=None):
     update_flag = True if (k_idx is None or k_idx == 0) else False
     if is_test:
-        sighan_dataset = SighanDataset(TEST, update=update_flag)
+        sighan_dataset = SighanDataset(TEST, update=update_flag, merge=args.merge)
         # When evaluating the test set, the batch must be 1.
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=1, shuffle=False, collate_fn=collate_fn)
         if k_idx is not None:
@@ -155,7 +158,7 @@ def evaluate(model, args, is_test, k_idx=None):
             fw = open(args.result_path, "w", encoding="utf-8")
     else:
         assert k_idx is not None
-        sighan_dataset = SighanDataset(VALID, k_idx, args.K, update=update_flag)
+        sighan_dataset = SighanDataset(VALID, k_idx, args.K, update=update_flag, merge=args.merge)
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=args.batch_size, shuffle=False, collate_fn=collate_fn)
 
     correct, gold_number, pred_number = 0, 0, 0
@@ -298,7 +301,7 @@ def train_kfold(args):
 
         # Get the training data.
         update_flag = True if k_idx == 0 else False
-        sighan_dataset = SighanDataset(TRAIN, k_idx, args.K, update=update_flag)
+        sighan_dataset = SighanDataset(TRAIN, k_idx, args.K, update=update_flag, merge=args.merge)
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=args.batch_size, shuffle=True, collate_fn=collate_fn)
 
         for epoch in range(1, args.epochs_num + 1):

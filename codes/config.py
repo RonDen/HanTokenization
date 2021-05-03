@@ -24,6 +24,11 @@ PAD_ID = 0
 UNK_ID = 1
 PUNC_ID = 5
 punc_flag = False        # Change it to False if you want to aggregate the puncs to [PUNC]
+half_numbers = "1234567890"
+full_numbers = "１２３４５６７８９０"
+chinese_numbers = "一二三四五六七八九○ｏ十百万亿"
+alphabet = "abcdefghijklmnopqrstuvwxyzａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ"
+serial_punc = "-—…－"
 
 ### For training. ###
 # Model options
