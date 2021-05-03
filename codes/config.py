@@ -23,6 +23,7 @@ label_number = 5
 PAD_ID = 0
 UNK_ID = 1
 PUNC_ID = 5
+punc_flag = False        # Change it to False if you want to aggregate the puncs to [PUNC]
 
 ### For training. ###
 # Model options

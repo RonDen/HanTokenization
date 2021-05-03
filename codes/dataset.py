@@ -17,7 +17,7 @@ from codes.vocab import Vocab
 """ SIGHAN Dataset. """
 
 class SighanDataset(Dataset):
-    def __init__(self, state=TRAIN, index=0, k_fold=K, vocab_path="../pretrained_models/Glove/vocab.txt"):
+    def __init__(self, state=TRAIN, index=0, k_fold=K, vocab_path="../pretrained_models/Glove/vocab.txt", update=False):
         """ 
             The Sighan Dataset.
 
@@ -28,6 +28,7 @@ class SighanDataset(Dataset):
                 index:          The i-th fold in the dataset.
                 k_fold:         Apply k-fold methodology.
                 vocab_path:     The vocabulary path.
+                update:         To update the json file.
 
             Returns:
         """
@@ -48,7 +49,8 @@ class SighanDataset(Dataset):
         assert state == TRAIN or state == VALID or state == TEST
 
         # Generate the preprocessed data.
-        if not os.path.exists(self.preprocessed_data_path):
+        if not os.path.exists(self.preprocessed_data_path) or update is True:
+            #print("Building dataset...")
             fw = open(self.preprocessed_data_path, "w", encoding="utf-8")
 
             with open(self.origin_data_path, "r", encoding="utf-8") as fr:
@@ -63,12 +65,12 @@ class SighanDataset(Dataset):
                             word_label = [label_dict["B"]] + [label_dict["I"]] * (word_length - 2) + [label_dict["E"]]
                             label.extend(word_label)
                         else:
-                            print("Warning: the word length can not less than 1.")
+                            #print("Warning: the word length can not less than 1.")
                             continue
                     assert len(sentence) == len(label)
                     if len(sentence) > self.max_length:
                         self.max_length = len(sentence)
-                    sentence_id = [self.vocab.get(t) for t in sentence]
+                    sentence_id = [self.vocab.get(t, punc_flag) for t in sentence]
                     if len(sentence) == 0: continue
                     data_str = json.dumps({"sentence": sentence, "sentence_id": sentence_id, "label": label}, ensure_ascii=False)
                     #print(data_str)
@@ -76,7 +78,7 @@ class SighanDataset(Dataset):
             
             fw.close()
 
-            print("The max sentence length: {}.".format(self.max_length))
+            #print("The max sentence length: {}.".format(self.max_length))
         
         # Get the data lines.
         fr_pre = open(self.preprocessed_data_path, "r", encoding="utf-8")

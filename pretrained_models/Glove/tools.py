@@ -7,7 +7,7 @@ import re
 import argparse
 import numpy as np
 
-def get_pretraining_corpus(source_path, target_path):
+def get_pretraining_corpus(source_path, target_path, punc=False):
     """ 
         Generate the pretraining corpus based on the training text.
 
@@ -15,16 +15,22 @@ def get_pretraining_corpus(source_path, target_path):
         
             source_path:        The source path of training text.
             target_path:        The target path.
+            punc:               If with punc.
 
         Returns:
     """
     fr = open(source_path, "r", encoding="utf-8")
     fw = open(target_path, "w", encoding="utf-8")
 
-    sub_str = r'，|。|、|“|”|（|）|：|；|—|《|》|．|『|』|…|！|-|’|／|∶|‘|－|●|ｒ|○|ａ|ｏ|▲|Ⅱ|⑵|〈|〉|①|②|③|°|④|⑤|⑥|⑦|＋|＝|＞|［|］|～|\?|]'
+    #sub_str = r'，|。|、|“|”|（|）|：|；|—|《|》|．|『|』|…|！|-|’|／|∶|‘|－|●|ｒ|○|ａ|ｏ|▲|Ⅱ|⑵|〈|〉|①|②|③|°|④|⑤|⑥|⑦|＋|＝|＞|［|］|～|\?|]'
+    # 去掉可以和其他字连成词的符号
+    sub_str = r'，|。|、|“|”|（|）|：|；|《|》|『|』|！|’|∶|‘|●|ｒ|ａ|▲|Ⅱ|⑵|〈|〉|①|②|③|④|⑤|⑥|⑦|＋|＝|＞|［|］|～|\?|？|]'
 
     for index, _line in enumerate(fr):
-        line = re.sub(sub_str, " ", _line)
+        if punc is False:
+            line = re.sub(sub_str, " ", _line)
+        else:
+            line = _line
         line = list(line.strip().replace(" ", ""))
         line = " ".join(line) + "\n"
         fw.write(line)
@@ -83,7 +89,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument(
         "--type", 
-        choices=["corpus", "reserved"],
+        choices=["corpus", "reserved", "corpus_with_punc", "reserved_with_punc"],
         default="corpus", 
         help="What tool do you want to use.")
 
@@ -96,6 +102,16 @@ if __name__ == "__main__":
     elif args.type == "reserved":
         embed_path = "./glove_embed.txt"
         vocab_path = "./vocab.txt"
+        reserved_path = "../reserved_vocab.txt"
+        embed_size = 300
+        add_reserved_vocab(embed_path, vocab_path, reserved_path, embed_size)
+    elif args.type == "corpus_with_punc":
+        source_path = "../../datasets/training.txt"
+        target_path = "./corpus_with_punc.txt"
+        get_pretraining_corpus(source_path, target_path, True)
+    elif args.type == "reserved_with_punc":
+        embed_path = "./glove_embed_with_punc.txt"
+        vocab_path = "./vocab_with_punc.txt"
         reserved_path = "../reserved_vocab.txt"
         embed_size = 300
         add_reserved_vocab(embed_path, vocab_path, reserved_path, embed_size)

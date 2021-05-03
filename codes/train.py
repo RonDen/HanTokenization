@@ -144,8 +144,9 @@ def build_model(args):
 
 # Evaluation function.
 def evaluate(model, args, is_test, k_idx=None):
+    update_flag = True if (k_idx is None or k_idx == 0) else False
     if is_test:
-        sighan_dataset = SighanDataset(TEST)
+        sighan_dataset = SighanDataset(TEST, update=update_flag)
         # When evaluating the test set, the batch must be 1.
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=1, shuffle=False, collate_fn=collate_fn)
         if k_idx is not None:
@@ -154,7 +155,7 @@ def evaluate(model, args, is_test, k_idx=None):
             fw = open(args.result_path, "w", encoding="utf-8")
     else:
         assert k_idx is not None
-        sighan_dataset = SighanDataset(VALID, k_idx, args.K)
+        sighan_dataset = SighanDataset(VALID, k_idx, args.K, update=update_flag)
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=args.batch_size, shuffle=False, collate_fn=collate_fn)
 
     correct, gold_number, pred_number = 0, 0, 0
@@ -296,7 +297,8 @@ def train_kfold(args):
         print("--------------- The {}-th fold as the validation set... ---------------".format(k_idx+1))
 
         # Get the training data.
-        sighan_dataset = SighanDataset(TRAIN, k_idx, args.K)
+        update_flag = True if k_idx == 0 else False
+        sighan_dataset = SighanDataset(TRAIN, k_idx, args.K, update=update_flag)
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=args.batch_size, shuffle=True, collate_fn=collate_fn)
 
         for epoch in range(1, args.epochs_num + 1):
