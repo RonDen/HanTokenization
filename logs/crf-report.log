@@ -1,4 +1,4 @@
-crf min_freq=3, cost=4
+crf with 3 features, training setting min_freq=3, cost=4
 RECALL: 0.911
 PRECISION:      0.927
 F1 :    0.919
@@ -6,3 +6,22 @@ F1 :    0.919
 OOV Rate:       0.058
 OOV Recall:     0.487
 IV Recall:      0.937
+
+crf with 6 features, training setting min_freq=3, cost=4
+RECALL:	0.920
+PRECISION:	0.937
+F1 :	0.929
+
+OOV Rate:	0.058
+OOV Recall:	0.559
+IV Recall:	0.942
+
+with feature l=2 and r2, freq=1 cost=4.0
+
+RECALL:	0.923
+PRECISION:	0.942
+F1 :	0.932
+
+OOV Rate:	0.058
+OOV Recall:	0.593
+IV Recall:	0.943
