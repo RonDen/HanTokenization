@@ -26,6 +26,7 @@ def print_dptable(V):
             print("%.7s" % ("%f" % V[t][y]))
         print
 
+
 def viterbi(obs, states, start_p, trans_p, emit_p):
     V = [{}]
     path = {}

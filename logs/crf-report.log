@@ -1,0 +1,8 @@
+crf min_freq=3, cost=4
+RECALL: 0.911
+PRECISION:      0.927
+F1 :    0.919
+
+OOV Rate:       0.058
+OOV Recall:     0.487
+IV Recall:      0.937

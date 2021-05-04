@@ -101,3 +101,43 @@ IV Recall:      0.942
 3. 暂时将标点符号映射成了一个词向量，可以考虑分开
 4. 结合一些人工规则进一步处理分词结果
 5. 结合不同分词模型进行集成
+
+
+### 最大熵模型
+
+```txt
+result of maxent in iter 100
+RECALL:	0.825
+PRECISION:	0.838
+F1 :	0.832
+
+OOV Rate:	0.058
+OOV Recall:	0.464
+IV Recall:	0.847
+```
+
+
+### CRF++模型
+template file
+```txt
+# Unigram
+U02:%x[0,0]
+U03:%x[1,0]
+U06:%x[0,0]/%x[1,0]
+
+# Bigram
+B
+```
+仅仅使用了十分基础且简单的特征。
+
+```txt
+crf min_freq=3, cost=4
+RECALL: 0.911
+PRECISION:      0.927
+F1 :    0.919
+
+OOV Rate:       0.058
+OOV Recall:     0.487
+IV Recall:      0.937
+```
+
