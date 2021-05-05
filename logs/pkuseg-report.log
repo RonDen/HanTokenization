@@ -1,0 +1,16 @@
+-----eval on default settings
+RECALL: 0.920
+PRECISION:      0.949
+F1 :    0.934
+
+OOV Rate:       0.058
+OOV Recall:     0.822
+IV Recall:      0.926
+-----after set training vocab
+RECALL: 0.894
+PRECISION:      0.867
+F1 :    0.880
+
+OOV Rate:       0.058
+OOV Recall:     0.219
+IV Recall:      0.935

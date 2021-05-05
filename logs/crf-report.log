@@ -25,3 +25,43 @@ F1 :	0.932
 OOV Rate:	0.058
 OOV Recall:	0.593
 IV Recall:	0.943
+
+with feature l=2 and r=2, freq=1 cost=2.0
+
+RECALL:	0.923
+PRECISION:	0.942
+F1 :	0.932
+
+OOV Rate:	0.058
+OOV Recall:	0.598
+IV Recall:	0.943
+
+with feature l=2 and r=2, algorithm=MIRA freq=1 cost=2.0
+
+RECALL:	0.920
+PRECISION:	0.934
+F1 :	0.927
+
+OOV Rate:	0.058
+OOV Recall:	0.562
+IV Recall:	0.942
+
+with feature l=2 and r=2, algorithm=CRF freq=1 cost=2.0
+
+RECALL:	0.920
+PRECISION:	0.934
+F1 :	0.927
+
+OOV Rate:	0.058
+OOV Recall:	0.562
+IV Recall:	0.942
+
+with feature l=2 and r=2, algorithm=CRF freq=1 cost=2.0
+
+RECALL:	0.924
+PRECISION:	0.941
+F1 :	0.932
+
+OOV Rate:	0.058
+OOV Recall:	0.612
+IV Recall:	0.943

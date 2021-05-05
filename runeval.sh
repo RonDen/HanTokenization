@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # echo "jieba without dictionary eval result"
-# perl scripts/score datasets/training_vocab.txt datasets/test.txt results/jieba-test-result.txt
+perl scripts/score datasets/training_vocab.txt datasets/test.txt /home/luod/class/nlp/HanTokenization/results/jieba-test-result-hmm.txt
 
 # echo "jieba with dictionary eval result"
 # perl scripts/score datasets/training_vocab.txt datasets/test.txt results/jieba-test-result-im.txt

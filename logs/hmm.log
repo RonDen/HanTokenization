@@ -1,0 +1,65 @@
+HMM with no chunk
+RECALL: 0.745
+PRECISION:      0.715
+F1 :    0.730
+
+OOV Rate:       0.058
+OOV Recall:     0.315
+IV Recall:      0.771
+
+HMM with chunk
+RECALL: 0.784
+PRECISION:      0.760
+F1 :    0.772
+
+OOV Rate:       0.058
+OOV Recall:     0.436
+IV Recall:      0.805
+
+------------------------- Train Set Result ----------------------------------
+RECALL: 0.798
+PRECISION:      0.769
+F1 :    0.784
+
+OOV Rate:       0.000
+OOV Recall:     --
+IV Recall:      0.798
+
+RECALL: 0.777
+PRECISION:      0.759
+F1 :    0.768
+
+OOV Rate:       0.000
+OOV Recall:     --
+IV Recall:      0.777
+
+RECALL: 0.804
+PRECISION:      0.780
+F1 :    0.792
+
+OOV Rate:       0.000
+OOV Recall:     --
+IV Recall:      0.804
+RECALL: 0.798
+PRECISION:      0.769
+F1 :    0.783
+
+OOV Rate:       0.000
+OOV Recall:     --
+IV Recall:      0.798
+
+-------------------- Test result with preprocess ----------------
+RECALL: 0.746
+PRECISION:      0.716
+F1 :    0.731
+
+OOV Rate:       0.058
+OOV Recall:     0.318
+IV Recall:      0.772
+RECALL: 0.746
+PRECISION:      0.716
+F1 :    0.731
+
+OOV Rate:       0.058
+OOV Recall:     0.318
+IV Recall:      0.772
