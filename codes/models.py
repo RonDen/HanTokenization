@@ -10,7 +10,7 @@ import torch
 import torch.nn as nn
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 
-from codes.layers import CRF
+from codes.layers import CRF, TransformerLayer
 
 class BiLstmModel(nn.Module):
     def __init__(self, args):
@@ -207,7 +207,63 @@ class BiLstmCRFModel(nn.Module):
 
         return best_path
 
+class TransformerModel(nn.Module):
+    def __init__(self, args):
+        super(TransformerModel, self).__init__()
+
+        self.label_number = args.label_number
+        self.use_cuda = args.use_cuda
+        self.embed_size = args.embed_size
+        self.num_embeddings = args.vocab_len
+        self.device = args.device
+        self.hidden_size = args.hidden_size
+        self.transformer_layers = args.transformer_layers
+        self.dropout = args.dropout
+
+        self.embedding = nn.Embedding(self.num_embeddings, self.embed_size)
+        self.transformer = nn.ModuleList([
+            TransformerLayer(args) for _ in range(self.transformer_layers)
+        ])
+        self.linear = nn.Linear(self.hidden_size, self.label_number)
+        self.droplayer = nn.Dropout(p=self.dropout)
+    
+    def get_mask(self, src_len, batch_size, seq_len):
+        """ Generate the mask matrix. """
+        src_range = torch.arange(0, seq_len).long()
+        src_len = torch.LongTensor(src_len)
+        src_range_expand = src_range.unsqueeze(0).expand(batch_size, seq_len)
+        src_len_expand = src_len.unsqueeze(1).expand_as(src_range_expand)
+        mask = src_range_expand < src_len_expand
+        return mask
+    
+    def forward(self, src, src_len):
+        '''
+            Forward Algorithm.
+
+            Args:
+
+                src (batch_size, seq_length) : word-level representation of sentence
+                src_len (batch_size)         : the sentence length
+
+            Returns:
+
+                feats (batch_size, seq_length, num_labels) : predect feats.
+        '''
+        batch_size, seq_len = src.size(0), src.size(1)
+        # Embedding.
+        emb = self.embedding(src)
+        # Transformer. (batch_size, seq_length, hidden_size)
+        mask = self.get_mask(src_len, batch_size, seq_len).float().view(batch_size, 1, seq_len, -1)
+        mask = (1.0 - mask) * -10000.0
+        hidden = emb
+        for i in range(self.transformer_layers):
+            hidden = self.transformer[i](hidden, mask.to(self.device))
+        # Linear layer. (batch_size, seq_length, label_number)
+        feats = self.linear(hidden).view(batch_size, seq_len, -1)
+        return feats
+
 ModelDict = {
     "bilstm": BiLstmModel,
-    "bilstmcrf": BiLstmCRFModel
+    "bilstmcrf": BiLstmCRFModel,
+    "transformer": TransformerModel
 }

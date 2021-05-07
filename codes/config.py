@@ -43,3 +43,9 @@ lstm_hidden = 300
 epochs_num = 50
 report_steps = 100
 seed = 7
+
+# For transformer.
+hidden_size = 300
+feedforward_size = 300
+heads_num = 2
+transformer_layers = 4

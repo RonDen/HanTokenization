@@ -94,11 +94,17 @@ class SighanDataset(Dataset):
         data_len = len(data_lines)
 
         if state == TRAIN:
-            self.data_lines = data_lines[:int((index % k_fold) * data_len / k_fold)] + \
-                                data_lines[int((index % k_fold + 1) * data_len / k_fold):]
+            if k_fold > 1:
+                self.data_lines = data_lines[:int((index % k_fold) * data_len / k_fold)] + \
+                                    data_lines[int((index % k_fold + 1) * data_len / k_fold):]
+            else:
+                self.data_lines = data_lines
         elif state == VALID:
-            self.data_lines = data_lines[int((index % k_fold) * data_len / k_fold): \
-                                int((index % k_fold + 1) * data_len / k_fold)]
+            if k_fold > 1:
+                self.data_lines = data_lines[int((index % k_fold) * data_len / k_fold): \
+                                    int((index % k_fold + 1) * data_len / k_fold)]
+            else:
+                self.data_lines = []
         else:
             self.data_lines = data_lines
 

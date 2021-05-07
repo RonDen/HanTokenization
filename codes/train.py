@@ -68,11 +68,19 @@ def load_parameters():
 
     # Model options.
     parser.add_argument("--model_type", 
-        choices=["bilstm", "bilstmcrf"],
+        choices=["bilstm", "bilstmcrf", "transformer"],
         default="bilstm",
         help="What kind of model do you want to use.")
     parser.add_argument("--batch_size", type=int, default=batch_size,
                         help="Batch_size.")
+    parser.add_argument("--hidden_size", type=int, default=hidden_size,
+                        help="Hidden_size for transformers.")
+    parser.add_argument("--feedforward_size", type=int, default=feedforward_size,
+                        help="Feedforward_size for transformers.")
+    parser.add_argument("--heads_num", type=int, default=heads_num,
+                        help="Heads_num for transformers.")
+    parser.add_argument("--transformer_layers", type=int, default=transformer_layers,
+                        help="Transformer layers.")
     """ parser.add_argument("--seq_length", default=seq_length, type=int,
                         help="Sequence length.") """
     
@@ -126,7 +134,7 @@ def build_model(args):
 
     # Build sequence labeling model.
     model = ModelDict[args.model_type](args)
-    model.embedding.weight.data.copy_(embed_weight)
+    #model.embedding.weight.data.copy_(embed_weight)
 
     # For simplicity, we use DataParallel wrapper to use multiple GPUs.
     if torch.cuda.device_count() > 1:
@@ -264,6 +272,8 @@ def evaluate(model, args, is_test, k_idx=None):
     return f1
 
 # Training function.
+# If args.K > 1, we apply K-fold validation.
+# If args.K == 1, we use all of training data to train the best model.
 def train_kfold(args):
     # Training phase.
     print("Start training.")
@@ -304,6 +314,9 @@ def train_kfold(args):
         sighan_dataset = SighanDataset(TRAIN, k_idx, args.K, update=update_flag, merge=args.merge)
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=args.batch_size, shuffle=True, collate_fn=collate_fn)
 
+        if k_idx == 0:
+            print("Data length: ", len(sighan_dataset))
+
         for epoch in range(1, args.epochs_num + 1):
             model.train()
             for i, batch in enumerate(sighan_data_loader):
@@ -329,10 +342,11 @@ def train_kfold(args):
             """ if epoch == 1:
                 save_model_with_optim(model, optimizer, get_k_file_path(args.best_model_path, k_idx)) """
 
-            f1 = evaluate(model, args, False, k_idx)
-            if f1 >= best_f1:
-                best_f1 = f1
-                save_model_with_optim(model, optimizer, get_k_file_path(args.best_model_path, k_idx))
+            if args.K > 1:
+                f1 = evaluate(model, args, False, k_idx)
+                if f1 >= best_f1:
+                    best_f1 = f1
+                    save_model_with_optim(model, optimizer, get_k_file_path(args.best_model_path, k_idx))
 
         # Save the last optimizer and model.
         save_model_with_optim(model, optimizer, get_k_file_path(args.last_model_path, k_idx))
@@ -340,7 +354,10 @@ def train_kfold(args):
         # Evaluation phase.
         print("Start evaluation.")
 
-        model.load_state_dict(torch.load(get_k_file_path(args.best_model_path, k_idx)), strict=False)
+        if args.K > 1:
+            model.load_state_dict(torch.load(get_k_file_path(args.best_model_path, k_idx)), strict=False)
+        else:
+            model.load_state_dict(torch.load(get_k_file_path(args.last_model_path, k_idx)), strict=False)
 
         evaluate(model, args, True, k_idx)
 
