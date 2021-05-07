@@ -17,7 +17,7 @@ from codes.vocab import Vocab
 """ SIGHAN Dataset. """
 
 class SighanDataset(Dataset):
-    def __init__(self, state=TRAIN, index=0, k_fold=K, vocab_path="../pretrained_models/Glove/vocab.txt", update=False, merge=False):
+    def __init__(self, state=TRAIN, index=0, k_fold=K, vocab_path="../pretrained_models/Glove/vocab.txt", update=False, merge=False, separate=False):
         """ 
             The Sighan Dataset.
 
@@ -29,6 +29,7 @@ class SighanDataset(Dataset):
                 k_fold:         Apply k-fold methodology.
                 vocab_path:     The vocabulary path.
                 update:         To update the json file.
+                separate:       Separate the text based on punc.
 
             Returns:
         """
@@ -68,8 +69,6 @@ class SighanDataset(Dataset):
                             #print("Warning: the word length can not less than 1.")
                             continue
                     assert len(sentence) == len(label)
-                    if len(sentence) > self.max_length:
-                        self.max_length = len(sentence)
                     if merge == True:
                         sentence, sentence_train, label = self.merge_special_tokens([w for w in sentence], label)
                         # print(sentence, sentence_train, label)
@@ -80,9 +79,21 @@ class SighanDataset(Dataset):
                         sentence_train = sentence
                     sentence_id = [self.vocab.get(t, punc_flag) for t in sentence_train]
                     if len(sentence) == 0: continue
-                    data_str = json.dumps({"sentence": sentence, "sentence_train": sentence_train, "sentence_id": sentence_id, "label": label}, ensure_ascii=False)
-                    #print(data_str)
-                    fw.write(data_str + "\n")
+                    if separate is True:
+                        sentence_list, sentence_train_list, sentence_id_list, label_list = self.separate_text(sentence, sentence_train, sentence_id, label)
+                        for sen_idx in range(len(sentence_list)):
+                            data_str = json.dumps({"line_id": idx+1, "sentence": sentence_list[sen_idx], "sentence_train": sentence_train_list[sen_idx], "sentence_id": sentence_id_list[sen_idx], "label": label_list[sen_idx]}, ensure_ascii=False)
+                            fw.write(data_str + "\n")
+                            if len(sentence_list[sen_idx]) > self.max_length:
+                                self.max_length = len(sentence_list[sen_idx])
+                            """ if len(sentence_list[sen_idx]) == 959:
+                                print("line_id: {}, sentence: {}".format(idx+1, sentence_list[sen_idx])) """
+                    else:
+                        data_str = json.dumps({"line_id": idx+1, "sentence": sentence, "sentence_train": sentence_train, "sentence_id": sentence_id, "label": label}, ensure_ascii=False)
+                        #print(data_str)
+                        fw.write(data_str + "\n")
+                        if len(sentence) > self.max_length:
+                            self.max_length = len(sentence)
             
             fw.close()
 
@@ -111,7 +122,7 @@ class SighanDataset(Dataset):
         fr_pre.close()
 
         # Get the sentences and labels.
-        self.sentence, self.sentence_id, self.label = [], [], []
+        self.sentence, self.sentence_id, self.label, self.line_id = [], [], [], []
         for line in self.data_lines:
             line = line.strip()
             if line == "": continue
@@ -119,9 +130,30 @@ class SighanDataset(Dataset):
             self.sentence.append(line["sentence"])
             self.sentence_id.append(line["sentence_id"])
             self.label.append(line["label"])
+            self.line_id.append(line["line_id"])
         self.length = len(self.sentence)
         
         return
+    
+    def separate_text(self, sentence, sentence_train, sentence_id, label):
+        separate_punc_list = [_ for _ in separate_punc]
+        start, end = 0, 1
+        sentence_list, sentence_train_list, sentence_id_list, label_list = [], [], [], []
+        while end < len(sentence):
+            if end == len(sentence) - 1:
+                sentence_list.append(sentence[start:end+1])
+                sentence_train_list.append(sentence_train[start:end+1])
+                sentence_id_list.append(sentence_id[start:end+1])
+                label_list.append(label[start:end+1])
+                break
+            if sentence[end] in separate_punc_list:
+                sentence_list.append(sentence[start:end+1])
+                sentence_train_list.append(sentence_train[start:end+1])
+                sentence_id_list.append(sentence_id[start:end+1])
+                label_list.append(label[start:end+1])
+                start = end + 1
+            end += 1
+        return sentence_list, sentence_train_list, sentence_id_list, label_list
     
     def merge_special_tokens(self, word_list, label):
         """ 
@@ -240,7 +272,7 @@ class SighanDataset(Dataset):
             return label_dict["O"]
 
     def __getitem__(self, index):
-        return self.sentence[index], self.sentence_id[index], self.label[index]
+        return self.sentence[index], self.sentence_id[index], self.label[index], self.line_id[index]
     
     def __len__(self):
         return self.length
@@ -254,19 +286,20 @@ def collate_fn(batch):
             batch:              The batch data.
         
         Returns:
-            ([sentence], [padded_sentence_id], [sentence_length], [padded_label])
+            ([sentence], [padded_sentence_id], [sentence_length], [padded_label], line_idx)
     """
     batch.sort(key=lambda b: len(b[0]), reverse=True)
     data_length = [len(b[0]) for b in batch]
     sent_seq = [b[0] for b in batch]
     sent_id_seq = [torch.FloatTensor(b[1]) for b in batch]
     label = [torch.FloatTensor(b[2]) for b in batch]
+    line_id = [b[3] for b in batch]
     padded_sent_id_seq = pad_sequence(sent_id_seq, batch_first=True, padding_value=PAD_ID).long()
     padded_label = pad_sequence(label, batch_first=True, padding_value=label_dict["O"]).long()
-    return sent_seq, padded_sent_id_seq, data_length, padded_label
+    return sent_seq, padded_sent_id_seq, data_length, padded_label, line_id
 
 if __name__ == "__main__":
-    sighan_dataset = SighanDataset(TEST, 0, 10, update=True, merge=True)
+    sighan_dataset = SighanDataset(TRAIN, 0, 5, update=True, merge=True, separate=True)
     sighan_data_loader = DataLoader(sighan_dataset, batch_size=2, shuffle=False, collate_fn=collate_fn)
     for batch in sighan_data_loader:
         print(batch[0])

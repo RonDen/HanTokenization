@@ -105,11 +105,14 @@ def load_parameters():
                         help="K fold.")
     parser.add_argument("--merge", type=int, default=0,
                         help="If merge. 0->False, 1->True")
+    parser.add_argument("--separate", type=int, default=0,
+                        help="If separate. 0->False, 1->True")
     
     args = parser.parse_args()
 
     args.lstm_dropout = args.dropout
     args.merge = True if args.merge == 1 else False
+    args.separate = True if args.separate == 1 else False
 
     # Labels list.
     args.label_dict, args.label_list, args.label_number = label_dict, label_list, label_number
@@ -157,16 +160,17 @@ def build_model(args):
 def evaluate(model, args, is_test, k_idx=None):
     update_flag = True if (k_idx is None or k_idx == 0) else False
     if is_test:
-        sighan_dataset = SighanDataset(TEST, update=update_flag, merge=args.merge)
+        sighan_dataset = SighanDataset(TEST, update=update_flag, merge=args.merge, separate=args.separate)
         # When evaluating the test set, the batch must be 1.
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=1, shuffle=False, collate_fn=collate_fn)
         if k_idx is not None:
-            fw = open(get_k_file_path(args.result_path, k_idx), "w", encoding="utf-8")
+            result_file = get_k_file_path(args.result_path, k_idx)
         else:
-            fw = open(args.result_path, "w", encoding="utf-8")
+            result_file = args.result_path
+        fw = open(result_file, "w", encoding="utf-8")
     else:
         assert k_idx is not None
-        sighan_dataset = SighanDataset(VALID, k_idx, args.K, update=update_flag, merge=args.merge)
+        sighan_dataset = SighanDataset(VALID, k_idx, args.K, update=update_flag, merge=args.merge, separate=args.separate)
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=args.batch_size, shuffle=False, collate_fn=collate_fn)
 
     correct, gold_number, pred_number = 0, 0, 0
@@ -175,7 +179,7 @@ def evaluate(model, args, is_test, k_idx=None):
 
     for i, batch in enumerate(sighan_data_loader):
 
-        sents, sent_ids, sent_lens, sent_labels = batch
+        sents, sent_ids, sent_lens, sent_labels, line_ids = batch
         sent_ids = sent_ids.to(args.device)
 
         feats = model(sent_ids, sent_lens)
@@ -197,7 +201,10 @@ def evaluate(model, args, is_test, k_idx=None):
             """ Save the results. """
             if is_test:
                 #if i == 0 and j == 0: print("Write the result.")
-                result_str = text[0]
+                if args.separate is False:
+                    result_str = text[0]
+                else:
+                    result_str = str(int(line_ids[j])) + "[SEP]" + text[0]
                 for k in range(1, text_len):
                     if pred_tags[k] == "S" or pred_tags[k] == "B":
                         result_str += ("  " + text[k])
@@ -262,6 +269,19 @@ def evaluate(model, args, is_test, k_idx=None):
 
     if is_test:
         fw.close()
+        if args.separate is True:
+            final_result = []
+            with open(result_file, "r", encoding="utf-8") as f_result:
+                for _, line in enumerate(f_result):
+                    line = line.strip().split("[SEP]")
+                    assert len(line) == 2
+                    if int(line[0]) > len(final_result):
+                        final_result.append(line[1])
+                    else:
+                        final_result[int(line[0]) - 1] += ("  " + line[1])
+            with open(result_file, "w", encoding="utf-8") as f_result:
+                for result_item in final_result:
+                    f_result.write(result_item + "\n")
             
     p = correct / pred_number if pred_number != 0 else 0
     r = correct / gold_number
@@ -311,7 +331,7 @@ def train_kfold(args):
 
         # Get the training data.
         update_flag = True if k_idx == 0 else False
-        sighan_dataset = SighanDataset(TRAIN, k_idx, args.K, update=update_flag, merge=args.merge)
+        sighan_dataset = SighanDataset(TRAIN, k_idx, args.K, update=update_flag, merge=args.merge, separate=args.separate)
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=args.batch_size, shuffle=True, collate_fn=collate_fn)
 
         if k_idx == 0:
@@ -322,7 +342,7 @@ def train_kfold(args):
             for i, batch in enumerate(sighan_data_loader):
                 model.zero_grad()
 
-                sents, sent_ids, sent_lens, sent_labels = batch
+                sents, sent_ids, sent_lens, sent_labels, line_ids = batch
                 sent_ids = sent_ids.to(args.device)
                 sent_labels = sent_labels.to(args.device)
 

@@ -29,6 +29,7 @@ full_numbers = "１２３４５６７８９０"
 chinese_numbers = "一二三四五六七八九○ｏ十百万亿"
 alphabet = "abcdefghijklmnopqrstuvwxyzａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ"
 serial_punc = "-—…－"
+separate_punc = "。？?;；!！"
 
 ### For training. ###
 # Model options
