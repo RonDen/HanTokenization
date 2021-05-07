@@ -109,7 +109,7 @@ def eval(file_path, train=False):
     if not train:
         os.system('perl /home/luod/class/nlp/HanTokenization/scripts/score /home/luod/class/nlp/HanTokenization/datasets/training_vocab.txt /home/luod/class/nlp/HanTokenization/datasets/test.txt %s ' % file_path)
     else:
-        os.system('perl /home/luod/class/nlp/HanTokenization/scripts/score /home/luod/class/nlp/HanTokenization/datasets/training_vocab.txt /home/luod/class/nlp/HanTokenization/datasets/training.txt %s ' % file_path)
+        os.system('perl /home/luod/class/nlp/HanTokenization/scripts/score /home/luod/class/nlp/HanTokenization/datasets/training_vocab.txt /home/luod/class/nlp/HanTokenization/datasets/training.txt %s' % file_path)
 
 
 def pre_make_cut(cut_func, result_file):
@@ -162,5 +162,11 @@ def get_result():
     pre_make_cut(cut, 'pre_test_hmm_chunk.txt')
 
 
+def make_test_file():
+    with open('../datasets/raw_test.txt', 'w', encoding='utf8') as f:
+        for line in test_raw:
+            f.write(line + '\n')
+
 if __name__ == '__main__':
-    get_result()
+    make_test_file()
+    # get_result()

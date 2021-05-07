@@ -14,3 +14,11 @@ F1 :    0.937
 OOV Rate:       0.058
 OOV Recall:     0.791
 IV Recall:      0.934
+-----trained
+RECALL: 0.925
+PRECISION:      0.949
+F1 :    0.937
+
+OOV Rate:       0.058
+OOV Recall:     0.791
+IV Recall:      0.934

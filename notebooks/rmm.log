@@ -1,0 +1,210 @@
+seg with max len = 1
+RECALL:	0.104
+PRECISION:	0.097
+F1 :	0.100
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.111
+seg with max len = 2
+RECALL:	0.181
+PRECISION:	0.177
+F1 :	0.179
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.192
+seg with max len = 3
+RECALL:	0.191
+PRECISION:	0.188
+F1 :	0.189
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.203
+seg with max len = 4
+RECALL:	0.226
+PRECISION:	0.223
+F1 :	0.224
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.239
+seg with max len = 5
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 6
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 7
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 8
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 9
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 10
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 11
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 12
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 13
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 14
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 15
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 16
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 17
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 18
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 19
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 20
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+seg with max len = 21
+RECALL:	0.903
+PRECISION:	0.893
+F1 :	0.898
+
+OOV Rate:	0.058
+OOV Recall:	0.000
+IV Recall:	0.958
+Spent 0.052s
+
+Spent 0.056s
+
+Spent 0.081s
+
+Spent 0.133s
+
+Spent 0.132s
+
+Spent 0.162s
+
+Spent 0.193s
+
+Spent 0.216s
+
+Spent 0.244s
+
+Spent 0.272s
+
+Spent 0.301s
+
+Spent 0.329s
+
+Spent 0.359s
+
+Spent 0.384s
+
+Spent 0.412s
+
+Spent 0.446s
+
+Spent 0.316s
+
+Spent 0.350s
+
+Spent 0.378s
+
+Spent 0.409s
+
+Spent 0.436s
+

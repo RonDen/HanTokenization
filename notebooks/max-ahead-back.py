@@ -1,4 +1,5 @@
 import os
+import re
 import time
 
 DATAROOT = '../datasets'
@@ -83,7 +84,7 @@ def max_back(line: str, max_len = 4):
                 lens -= 1
                 if lens == 0:
                     idx -= 1
-            
+
     return list(reversed(res))
 
 def show5():
@@ -94,33 +95,43 @@ def show5():
 # 查看前5个的效果
 # show5()
 
+def eval(file_path, train=False, report_file="", help_line=""):
+    gold = 'training' if train else 'test'
+    cmd = 'perl /home/luod/class/nlp/HanTokenization/scripts/score /home/luod/class/nlp/HanTokenization/datasets/training_vocab.txt /home/luod/class/nlp/HanTokenization/datasets/{}.txt {}'.format(gold, file_path)
+    if report_file:
+        os.system('echo {} >> {}'.format(help_line+'\n', report_file))
+        cmd += ' | tee -a {}'.format(report_file)
+    os.system(cmd)
+
 
 def run_back_seg(max_len: int):
-    filename = 'max-back-result-%d.txt' % (max_len - 1)
+    filename = 'max-back-result.txt'
+    report_file = os.path.join('/home/luod/class/nlp/HanTokenization/logs/', 'max-back-report.txt')
+    help_line = 'seg with max len = %d' % max_len
     with open(os.path.join(RESULTROOT, filename), 'w+', encoding='utf-8') as f:
         st = time.time()
-        result = '\n'.join(['  '.join(max_back(line)) for line in test_raw])
+        result = '\n'.join(['  '.join(max_back(line, max_len=max_len)) for line in test_raw])
         print("Spent %.3fs\n" % (time.time() - st))
         f.write(result)
+    eval(os.path.join(RESULTROOT, filename), train=False, report_file=report_file, help_line=help_line)
 
 
 def run_forward_seg(max_len: int):
-    filename = 'max-forward-result-%d.txt' % (max_len - 1)
+    filename = 'max-forward-result.txt'
+    report_file = os.path.join('/home/luod/class/nlp/HanTokenization/logs/', 'max-forward-report.txt')
+    help_line = 'seg with max len = %d' % max_len
     with open(os.path.join(RESULTROOT, filename), 'w+', encoding='utf-8') as f:
         st = time.time()
-        result = '\n'.join(['  '.join(max_forward(line)) for line in test_raw])
+        result = '\n'.join(['  '.join(max_forward(line, max_len=max_len)) for line in test_raw])
         print("Spent %.3fs\n" % (time.time() - st))
         f.write(result)
+    eval(os.path.join(RESULTROOT, filename), train=False, report_file=report_file, help_line=help_line)
 
 
 def run_batch():
-    run_back_seg(max_len=4)
-    run_back_seg(max_len=5)
-    run_back_seg(max_len=6)
-
-    run_forward_seg(max_len=4)
-    run_forward_seg(max_len=5)
-    run_forward_seg(max_len=6)
+    for i in range(1, 6):
+        run_back_seg(i)
 
 
 run_batch()
+# run_back_seg(4)

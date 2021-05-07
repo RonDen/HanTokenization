@@ -68,11 +68,19 @@ def load_parameters():
 
     # Model options.
     parser.add_argument("--model_type", 
-        choices=["bilstm"],
+        choices=["bilstm", "bilstmcrf", "transformer"],
         default="bilstm",
         help="What kind of model do you want to use.")
     parser.add_argument("--batch_size", type=int, default=batch_size,
                         help="Batch_size.")
+    parser.add_argument("--hidden_size", type=int, default=hidden_size,
+                        help="Hidden_size for transformers.")
+    parser.add_argument("--feedforward_size", type=int, default=feedforward_size,
+                        help="Feedforward_size for transformers.")
+    parser.add_argument("--heads_num", type=int, default=heads_num,
+                        help="Heads_num for transformers.")
+    parser.add_argument("--transformer_layers", type=int, default=transformer_layers,
+                        help="Transformer layers.")
     """ parser.add_argument("--seq_length", default=seq_length, type=int,
                         help="Sequence length.") """
     
@@ -95,10 +103,13 @@ def load_parameters():
                         help="Random seed.")
     parser.add_argument("--K", type=int, default=K,
                         help="K fold.")
+    parser.add_argument("--merge", type=int, default=0,
+                        help="If merge. 0->False, 1->True")
     
     args = parser.parse_args()
 
     args.lstm_dropout = args.dropout
+    args.merge = True if args.merge == 1 else False
 
     # Labels list.
     args.label_dict, args.label_list, args.label_number = label_dict, label_list, label_number
@@ -109,6 +120,7 @@ def load_parameters():
     args.vocab_len = len(vocab)
 
     if torch.cuda.is_available(): args.use_cuda = True
+    args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     return args
 
@@ -122,10 +134,9 @@ def build_model(args):
 
     # Build sequence labeling model.
     model = ModelDict[args.model_type](args)
-    model.embedding.weight.data.copy_(embed_weight)
+    #model.embedding.weight.data.copy_(embed_weight)
 
     # For simplicity, we use DataParallel wrapper to use multiple GPUs.
-    args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if torch.cuda.device_count() > 1:
         print("{} GPUs are available. Let's use them.".format(torch.cuda.device_count()))
         model = nn.DataParallel(model)
@@ -144,8 +155,9 @@ def build_model(args):
 
 # Evaluation function.
 def evaluate(model, args, is_test, k_idx=None):
+    update_flag = True if (k_idx is None or k_idx == 0) else False
     if is_test:
-        sighan_dataset = SighanDataset(TEST)
+        sighan_dataset = SighanDataset(TEST, update=update_flag, merge=args.merge)
         # When evaluating the test set, the batch must be 1.
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=1, shuffle=False, collate_fn=collate_fn)
         if k_idx is not None:
@@ -154,7 +166,7 @@ def evaluate(model, args, is_test, k_idx=None):
             fw = open(args.result_path, "w", encoding="utf-8")
     else:
         assert k_idx is not None
-        sighan_dataset = SighanDataset(VALID, k_idx, args.K)
+        sighan_dataset = SighanDataset(VALID, k_idx, args.K, update=update_flag, merge=args.merge)
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=args.batch_size, shuffle=False, collate_fn=collate_fn)
 
     correct, gold_number, pred_number = 0, 0, 0
@@ -167,7 +179,12 @@ def evaluate(model, args, is_test, k_idx=None):
         sent_ids = sent_ids.to(args.device)
 
         feats = model(sent_ids, sent_lens)
-        best_path = torch.argmax(feats, dim = -1).view(-1, sent_ids.size(1))
+        if hasattr(model, "get_best_path"):
+            #print("Using the get_best_path func in the model...")
+            best_path = model.get_best_path(feats, sent_lens)
+        else:
+            #print("Using the default get_best_path func...")
+            best_path = torch.argmax(feats, dim = -1).view(-1, sent_ids.size(1))
 
         for j in range(0, len(sent_ids)):
             text, gold_tags = sents[j], [str(args.label_list[int(p)]) for p in sent_labels[j]]
@@ -255,13 +272,14 @@ def evaluate(model, args, is_test, k_idx=None):
     return f1
 
 # Training function.
+# If args.K > 1, we apply K-fold validation.
+# If args.K == 1, we use all of training data to train the best model.
 def train_kfold(args):
-    total_loss, f1, best_f1 = 0., 0., 0.
-    
     # Training phase.
     print("Start training.")
     
     for k_idx in range(args.K):
+        total_loss, f1, best_f1 = 0., 0., 0.
 
         model = build_model(args)
 
@@ -271,10 +289,17 @@ def train_kfold(args):
             best_f1 = evaluate(model, args, True)
 
         # Criterion.
-        weight = [50.0] * args.label_number
-        weight[label_dict["O"]] = 1.0
-        weight = torch.tensor(weight).to(args.device)
-        criterion = CrossEntropyLoss(weight, reduction="mean")
+        default_criterion_flag = True
+        if hasattr(model, "criterion"):
+            print("Using the criterion func in the model...")
+            criterion = model.criterion
+            default_criterion_flag = False
+        else:
+            print("Using the default criterion func...")
+            weight = [50.0] * args.label_number
+            weight[label_dict["O"]] = 1.0
+            weight = torch.tensor(weight).to(args.device)
+            criterion = CrossEntropyLoss(weight, reduction="mean")
 
         # Optimizer.
         optimizer = Adam(model.parameters())
@@ -285,8 +310,12 @@ def train_kfold(args):
         print("--------------- The {}-th fold as the validation set... ---------------".format(k_idx+1))
 
         # Get the training data.
-        sighan_dataset = SighanDataset(TRAIN, k_idx, args.K)
+        update_flag = True if k_idx == 0 else False
+        sighan_dataset = SighanDataset(TRAIN, k_idx, args.K, update=update_flag, merge=args.merge)
         sighan_data_loader = DataLoader(sighan_dataset, batch_size=args.batch_size, shuffle=True, collate_fn=collate_fn)
+
+        if k_idx == 0:
+            print("Data length: ", len(sighan_dataset))
 
         for epoch in range(1, args.epochs_num + 1):
             model.train()
@@ -295,11 +324,14 @@ def train_kfold(args):
 
                 sents, sent_ids, sent_lens, sent_labels = batch
                 sent_ids = sent_ids.to(args.device)
-                sent_labels = sent_labels.to(args.device).view(-1)
+                sent_labels = sent_labels.to(args.device)
 
                 feats = model(sent_ids, sent_lens)
 
-                loss = criterion(feats.contiguous().view(-1, args.label_number), sent_labels)
+                if default_criterion_flag:
+                    loss = criterion(feats.contiguous().view(-1, args.label_number), sent_labels.view(-1))
+                else:
+                    loss = criterion(feats, sent_lens, sent_labels)
 
                 if (i + 1) % args.report_steps == 0:
                     print("Epoch id: {}, Training steps: {}, Loss: {:.6f}".format(epoch, i+1, loss))
@@ -310,10 +342,11 @@ def train_kfold(args):
             """ if epoch == 1:
                 save_model_with_optim(model, optimizer, get_k_file_path(args.best_model_path, k_idx)) """
 
-            f1 = evaluate(model, args, False, k_idx)
-            if f1 >= best_f1:
-                best_f1 = f1
-                save_model_with_optim(model, optimizer, get_k_file_path(args.best_model_path, k_idx))
+            if args.K > 1:
+                f1 = evaluate(model, args, False, k_idx)
+                if f1 >= best_f1:
+                    best_f1 = f1
+                    save_model_with_optim(model, optimizer, get_k_file_path(args.best_model_path, k_idx))
 
         # Save the last optimizer and model.
         save_model_with_optim(model, optimizer, get_k_file_path(args.last_model_path, k_idx))
@@ -321,7 +354,10 @@ def train_kfold(args):
         # Evaluation phase.
         print("Start evaluation.")
 
-        model.load_state_dict(torch.load(get_k_file_path(args.best_model_path, k_idx)), strict=False)
+        if args.K > 1:
+            model.load_state_dict(torch.load(get_k_file_path(args.best_model_path, k_idx)), strict=False)
+        else:
+            model.load_state_dict(torch.load(get_k_file_path(args.last_model_path, k_idx)), strict=False)
 
         evaluate(model, args, True, k_idx)
 

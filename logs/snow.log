@@ -5,3 +5,21 @@ F1 :    0.895
 OOV Rate:       0.058
 OOV Recall:     0.325
 IV Recall:      0.932
+
+
+-------------自己实现TNT+训练的效果
+RECALL: 0.767
+PRECISION:      0.767
+F1 :    0.767
+
+OOV Rate:       0.058
+OOV Recall:     0.341
+IV Recall:      0.793
+-------------自己实现TNT+训练的效果+chunk(re_han分割)
+RECALL: 0.785
+PRECISION:      0.776
+F1 :    0.780
+
+OOV Rate:       0.058
+OOV Recall:     0.417
+IV Recall:      0.807

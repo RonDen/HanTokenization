@@ -65,3 +65,23 @@ F1 :	0.932
 OOV Rate:	0.058
 OOV Recall:	0.612
 IV Recall:	0.943
+
+with feature l=2 and r=2, algorithm=CRF freq=1 cost=2.0
+
+RECALL:	0.924
+PRECISION:	0.940
+F1 :	0.932
+
+OOV Rate:	0.058
+OOV Recall:	0.621
+IV Recall:	0.942
+
+with feature l=2 and r=2, algorithm=CRF freq=1 cost=2.0
+
+RECALL:	0.933
+PRECISION:	0.928
+F1 :	0.931
+
+OOV Rate:	0.058
+OOV Recall:	0.589
+IV Recall:	0.954

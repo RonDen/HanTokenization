@@ -23,6 +23,12 @@ label_number = 5
 PAD_ID = 0
 UNK_ID = 1
 PUNC_ID = 5
+punc_flag = False        # Change it to False if you want to aggregate the puncs to [PUNC]
+half_numbers = "1234567890"
+full_numbers = "１２３４５６７８９０"
+chinese_numbers = "一二三四五六七八九○ｏ十百万亿"
+alphabet = "abcdefghijklmnopqrstuvwxyzａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ"
+serial_punc = "-—…－"
 
 ### For training. ###
 # Model options
@@ -34,6 +40,12 @@ learning_rate = 1e-4
 dropout = 0.1
 lstm_layers = 2
 lstm_hidden = 300
-epochs_num = 10
+epochs_num = 40
 report_steps = 100
 seed = 7
+
+# For transformer.
+hidden_size = 300
+feedforward_size = 300
+heads_num = 2
+transformer_layers = 4
