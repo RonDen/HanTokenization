@@ -57,9 +57,15 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
 
-    source_paths = ["../logs/bilstm_training.out", "../logs/bilstmcrf_training.out"]
-    colors = ["r-", "b-"]
-    labels = ["BiLSTM", "BiLSTM-CRF"]
+    source_paths = [
+        "../logs/bilstm_training.out", 
+        "../logs/bilstmcrf_training.out",
+        "../logs/bilstm_new_merge_training.out",
+        "../logs/bilstm_new_merge_random_training.out",
+        "../logs/transformer_new_merge_separate_training.out"
+    ]
+    colors = ["r-", "b-", "y-", "m-", "g-"]
+    labels = ["1", "2", "3", "4", "5"]
     target_path = "../results/" + args.data_type + "_curves.png"
     epochs_num = 50
     report_num = 4
