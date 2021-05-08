@@ -2,8 +2,8 @@ import os
 import jieba
 from collections import Counter
 
-DATAROOT = '../datasets'
-RESULTROOT = '../results'
+DATAROOT = '/home/luod/class/nlp/HanTokenization/datasets'
+RESULTROOT = '/home/luod/class/nlp/HanTokenization/results'
 VOCAB_FILE = os.path.join(DATAROOT, 'training_vocab.txt')
 VOCAB_FREQ = os.path.join(RESULTROOT, 'vocab-freq.txt')
 TRAIN_FILE = os.path.join(DATAROOT, 'training.txt')
@@ -46,19 +46,23 @@ test_set_split = [line.split('  ') for line in test_set]
 train_raw = [''.join(line) for line in train_set_split]
 test_raw = [''.join(line) for line in test_set_split]
 
-cnt = Counter()
-for line in train_set_split:
-    cnt.update(line)
+# cnt = Counter()
+# for line in train_set_split:
+#     cnt.update(line)
 
-with open(VOCAB_FREQ, 'w+', encoding='utf-8') as f:
-    result = '\n'.join([' '.join([word, str(freq), 'n']) for word, freq in cnt.most_common() if word])
-    f.writelines(result)
+# with open(VOCAB_FREQ, 'w+', encoding='utf-8') as f:
+#     result = '\n'.join([' '.join([word, str(freq), 'n']) for word, freq in cnt.most_common() if word])
+#     f.writelines(result)
     
 
 def seg_hmm():
     result_file = os.path.join(RESULTROOT, 'jieba-test-result-hmm.txt')
     with open(result_file, 'w+', encoding='utf-8') as f:
-        f.writelines(['  '.join(jieba.cut(line)) + '\n' for line in test_raw])
+        for line in test_raw:
+            res = '  '.join(jieba.cut(line))
+            res = res.replace('—  —', '——')
+            f.write(res)
+            f.write('\n')
 
 def seg_no_hmm():
     result_file = os.path.join(RESULTROOT, 'jieba-test-result-no-hmm.txt')

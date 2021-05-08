@@ -1,3 +1,8 @@
+from myhmm import cut
+from jieba.analyse.analyzer
+
+
+
 def __cut_DAG(self, sentence):
     DAG = self.get_DAG(sentence)
     route = {}
@@ -17,7 +22,7 @@ def __cut_DAG(self, sentence):
                     buf = ''
                 else:
                     if not self.FREQ.get(buf):
-                        recognized = finalseg.cut(buf)
+                        recognized = cut(buf)
                         for t in recognized:
                             yield t
                     else:
@@ -31,9 +36,10 @@ def __cut_DAG(self, sentence):
         if len(buf) == 1:
             yield buf
         elif not self.FREQ.get(buf):
-            recognized = finalseg.cut(buf)
+            recognized = cut(buf)
             for t in recognized:
                 yield t
         else:
             for elem in buf:
                 yield elem
+

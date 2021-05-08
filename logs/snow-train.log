@@ -1,0 +1,8 @@
+eval on training set
+RECALL: 0.956
+PRECISION:      0.959
+F1 :    0.958
+
+OOV Rate:       0.000
+OOV Recall:     --
+IV Recall:      0.956

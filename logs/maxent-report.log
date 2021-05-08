@@ -1,0 +1,60 @@
+result of maxent in iter 100
+RECALL:	0.825
+PRECISION:	0.838
+F1 :	0.832
+
+OOV Rate:	0.058
+OOV Recall:	0.464
+IV Recall:	0.847
+
+
+result of maxent in iter 200
+RECALL:	0.832
+PRECISION:	0.841
+F1 :	0.836
+
+OOV Rate:	0.058
+OOV Recall:	0.501
+IV Recall:	0.852
+
+
+result of maxent in iter 300
+RECALL:	0.830
+PRECISION:	0.840
+F1 :	0.835
+
+OOV Rate:	0.058
+OOV Recall:	0.484
+IV Recall:	0.851
+
+
+result of maxent in iter 400
+RECALL:	0.829
+PRECISION:	0.841
+F1 :	0.835
+
+OOV Rate:	0.058
+OOV Recall:	0.476
+IV Recall:	0.851
+
+
+result of maxent in iter 500
+RECALL:	0.827
+PRECISION:	0.838
+F1 :	0.832
+
+OOV Rate:	0.058
+OOV Recall:	0.463
+IV Recall:	0.849
+
+
+result of maxent in iter 600
+RECALL:	0.824
+PRECISION:	0.835
+F1 :	0.830
+
+OOV Rate:	0.058
+OOV Recall:	0.457
+IV Recall:	0.847
+
+
