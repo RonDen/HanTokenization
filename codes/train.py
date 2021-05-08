@@ -81,8 +81,8 @@ def load_parameters():
                         help="Heads_num for transformers.")
     parser.add_argument("--transformer_layers", type=int, default=transformer_layers,
                         help="Transformer layers.")
-    """ parser.add_argument("--seq_length", default=seq_length, type=int,
-                        help="Sequence length.") """
+    parser.add_argument("--seq_length", default=seq_length, type=int,
+                        help="Sequence length.")
     
     # Optimizer options.
     parser.add_argument("--learning_rate", type=float, default=learning_rate,

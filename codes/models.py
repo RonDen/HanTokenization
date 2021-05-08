@@ -6,6 +6,7 @@
 import sys
 sys.path.append("../")
 
+import numpy as np
 import torch
 import torch.nn as nn
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
@@ -219,13 +220,26 @@ class TransformerModel(nn.Module):
         self.hidden_size = args.hidden_size
         self.transformer_layers = args.transformer_layers
         self.dropout = args.dropout
+        self.seq_length = args.seq_length
 
         self.embedding = nn.Embedding(self.num_embeddings, self.embed_size)
+        self.pos_embedding = nn.Embedding.from_pretrained(self.get_sinusoid_encoding_table(self.seq_length+1, self.embed_size), freeze=True)
         self.transformer = nn.ModuleList([
             TransformerLayer(args) for _ in range(self.transformer_layers)
         ])
         self.linear = nn.Linear(self.hidden_size, self.label_number)
         self.droplayer = nn.Dropout(p=self.dropout)
+    
+    def get_sinusoid_encoding_table(self, n_position, d_model):
+        def cal_angle(position, hid_idx):
+            return position / np.power(1000, 2*(hid_idx // 2) / d_model)
+        def get_posi_angle_vec(position):
+            return [cal_angle(position, hid_j) for hid_j in range(d_model)]
+        
+        sinusoid_table = np.array([get_posi_angle_vec(pos_i) for pos_i in range(n_position)])
+        sinusoid_table[:, 0::2] = np.sin(sinusoid_table[:, 0::2])
+        sinusoid_table[:, 1::2] = np.cos(sinusoid_table[:, 1::2])
+        return torch.FloatTensor(sinusoid_table)
     
     def get_mask(self, src_len, batch_size, seq_len):
         """ Generate the mask matrix. """
@@ -252,6 +266,7 @@ class TransformerModel(nn.Module):
         batch_size, seq_len = src.size(0), src.size(1)
         # Embedding.
         emb = self.embedding(src)
+        emb += self.pos_embedding(torch.LongTensor([_ + 1 for _ in range(seq_len)]).to(self.device))
         # Transformer. (batch_size, seq_length, hidden_size)
         mask = self.get_mask(src_len, batch_size, seq_len).float().view(batch_size, 1, seq_len, -1)
         mask = (1.0 - mask) * -10000.0

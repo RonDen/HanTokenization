@@ -35,6 +35,7 @@ separate_punc = "。？?;；!！"
 # Model options
 batch_size = 32
 #seq_length = 1019   # test: 626
+seq_length = 1024
 # Optimizer options.
 learning_rate = 1e-4
 # Training options.
