@@ -64,6 +64,7 @@ IV Recall:      0.947
 
 ### Transformer
 ```txt
+# Forgot the position Embedding!!! Oh No!!!
 RECALL: 0.646
 PRECISION:      0.641
 F1 :    0.644
@@ -71,4 +72,13 @@ F1 :    0.644
 OOV Rate:       0.058
 OOV Recall:     0.409
 IV Recall:      0.660
+
+# separate
+RECALL: 0.893
+PRECISION:      0.911
+F1 :    0.902
+
+OOV Rate:       0.058
+OOV Recall:     0.696
+IV Recall:      0.905
 ```
