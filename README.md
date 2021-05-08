@@ -94,7 +94,7 @@ codes/:
 	|--vocab.py:				字典的加载，转化等
 ```
 
-实验报告中主要报告了五个不同组合的模型，下面说明各个模型的训练命令（注意：由于代码原因，需要先创建参数`--last_model_path`,`best_model_path`,`best_model_path`所在文件夹，才能顺利运行代码）
+实验报告中主要报告了五个不同组合的模型，下面说明各个模型的训练命令（注意：由于代码原因，需要先创建参数`last_model_path`,`best_model_path`,`result_path`所在文件夹，才能顺利运行代码）
 
 - 模型1
 
