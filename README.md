@@ -1,4 +1,4 @@
-﻿# HAN中文分词-2021 Spring NLP Homework
+# HAN中文分词-2021 Spring NLP Homework
 
 ### 训练样本词频统计
 
@@ -79,29 +79,76 @@ IV Recall:      0.958
 
 更多实验结果和测试报告见[result](./results/)和[logs](./logs/)文件夹。
 
-### Glove 预训练 + Bi-LSTM 模型
+### 深度学习方法
 
-预训练Glove模型的embedding在文件夹[pretrain_models](https://github.com/RonDen/HanTokenization/tree/main/pretrained_models)中。
-执行结果。
+代码主要位于`codes/`文件夹中，代码结构如下：
 
-```txt
-RECALL: 0.925
-PRECISION:      0.926
-F1 :    0.925
-
-OOV Rate:       0.058
-OOV Recall:     0.642
-IV Recall:      0.942
+```
+codes/:
+	|--config.py:				各种模型默认设置的超参数
+	|--dataset.py:				数据集的预处理和加载
+	|--layers.py:				一些神经网络层
+	|--models.py:				神经网络模型
+	|--painting.py:				训练曲线图的绘制函数
+	|--train.py:				模型训练主文件
+	|--vocab.py:				字典的加载，转化等
 ```
 
-可以改进的地方还有：
+实验报告中主要报告了五个不同组合的模型，下面说明各个模型的训练命令（注意：由于代码原因，需要先创建参数`last_model_path`,`best_model_path`,`result_path`所在文件夹，才能顺利运行代码）
 
-1. Glove用的出现词最小次数设为了3，可以调整
-2. learning rate，dropout，hidden_size, hidden_layer可以调整
-3. 暂时将标点符号映射成了一个词向量，可以考虑分开
-4. 结合一些人工规则进一步处理分词结果
-5. 结合不同分词模型进行集成
+- 模型1
 
+  ```
+  python3 train.py
+  ```
+
+- 模型2
+
+  ```
+  python3 train.py \
+    	--last_model_path ../models/bilstmcrf/last/model.bin \
+    	--best_model_path ../models/bilstmcrf/best/model.bin \
+    	--result_path ../results/bilstmcrf/test_result.txt \
+    	--model_type bilstmcrf
+  ```
+
+- 模型3
+
+  ```
+  python3 train.py \
+    	--last_model_path ../models/bilstm_new_merge/last/model.bin \
+    	--best_model_path ../models/bilstm_new_merge/best/model.bin \
+    	--result_path ../results/bilstm_new_merge/test_result.txt \
+    	--model_type bilstm --merge 1
+  ```
+
+- 模型4
+
+  ```
+   python3 train.py \
+    	--last_model_path ../models/bilstm_new_merge_random/last/model.bin \
+    	--best_model_path ../models/bilstm_new_merge_random/best/model.bin \
+    	--result_path ../results/bilstm_new_merge_random/test_result.txt \
+    	--model_type bilstm --merge 1
+  ```
+
+- 模型5
+
+  ```
+  python3 train.py \
+    	--last_model_path ../models/transformer_new_merge_separate/last/model.bin \
+    	--best_model_path ../models/transformer_new_merge_separate/best/model.bin \
+    	--result_path ../results/transformer_new_merge_separate/test_result.txt \
+    	--model_type transformer --merge 1 --separate 1 --report_steps 250
+  ```
+
+训练曲线如下：
+
+![Loss 曲线](./results/loss_curves.png)
+
+![Loss 曲线](./results/f1_curves.png)
+
+更多实验结果和测试报告见[result](./results/)和[logs](./logs/)文件夹以及[EvalResult.md](./EvalResult.md)文件。
 
 ### 最大熵模型
 
