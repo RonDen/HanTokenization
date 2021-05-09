@@ -8,3 +8,4 @@ models/
 *.pdf
 models/
 notebooks/models/
+datasets/training.txt.feature
