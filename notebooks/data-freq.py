@@ -49,11 +49,14 @@ def get_train_vocab_freq():
 def get_top80_word_freq(num=80):
     plt.figure(figsize=(16, 8))
     ax = frqdist.plot(num)
-    plt.savefig("前80个词的词频.png")
+    plt.tight_layout()
+    plt.savefig("wordcount80.pdf")
+    plt.show()
 
-    plt.figure(figsize=(16, 8))
-    ax = frqdist.plot(num, cumulative=True)
-    plt.savefig("前80个词的词频-累加.png")
+    # plt.figure(figsize=(16, 8))
+    # ax = frqdist.plot(num, cumulative=True)
+    # plt.savefig("前80个词的词频-累加.png")
+    # plt.show()
 
-# get_top80_word_freq()
-get_train_vocab_freq()
+get_top80_word_freq()
+# get_train_vocab_freq()

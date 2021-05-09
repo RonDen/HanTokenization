@@ -1,0 +1,1578 @@
+nohup: ignoring input
+Vocabulary Size:  3941
+Start training.
+Loading the Glove Embedding...
+Embedding size:  300
+Transitions:  tensor([[    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [-1000., -1000., -1000., -1000., -1000., -1000., -1000.]])
+4 GPUs are available. Let's use them.
+Using the criterion func in the model...
+--------------- The 1-th fold as the validation set... ---------------
+Epoch id: 1, Training steps: 100, Loss: 0.964342
+Epoch id: 1, Training steps: 200, Loss: 1.086100
+Epoch id: 1, Training steps: 300, Loss: 1.022820
+Epoch id: 1, Training steps: 400, Loss: 0.625778
+total_right, total_predict, predict_right: 223659, 227812, 205062
+precision, recall, and f1: 0.900, 0.917, 0.908
+Epoch id: 2, Training steps: 100, Loss: 0.731283
+Epoch id: 2, Training steps: 200, Loss: 0.292980
+Epoch id: 2, Training steps: 300, Loss: 0.286819
+Epoch id: 2, Training steps: 400, Loss: 0.387671
+total_right, total_predict, predict_right: 223659, 222826, 208222
+precision, recall, and f1: 0.934, 0.931, 0.933
+Epoch id: 3, Training steps: 100, Loss: 0.344477
+Epoch id: 3, Training steps: 200, Loss: 0.272150
+Epoch id: 3, Training steps: 300, Loss: 0.227955
+Epoch id: 3, Training steps: 400, Loss: 0.237822
+total_right, total_predict, predict_right: 223659, 223671, 210337
+precision, recall, and f1: 0.940, 0.940, 0.940
+Epoch id: 4, Training steps: 100, Loss: 0.118763
+Epoch id: 4, Training steps: 200, Loss: 0.237009
+Epoch id: 4, Training steps: 300, Loss: 0.217152
+Epoch id: 4, Training steps: 400, Loss: 0.184845
+total_right, total_predict, predict_right: 223659, 225016, 211843
+precision, recall, and f1: 0.941, 0.947, 0.944
+Epoch id: 5, Training steps: 100, Loss: 0.186026
+Epoch id: 5, Training steps: 200, Loss: 0.150888
+Epoch id: 5, Training steps: 300, Loss: 0.153532
+Epoch id: 5, Training steps: 400, Loss: 0.080690
+total_right, total_predict, predict_right: 223659, 222601, 210976
+precision, recall, and f1: 0.948, 0.943, 0.946
+Epoch id: 6, Training steps: 100, Loss: 0.058588
+Epoch id: 6, Training steps: 200, Loss: 0.093799
+Epoch id: 6, Training steps: 300, Loss: 0.067568
+Epoch id: 6, Training steps: 400, Loss: 0.067060
+total_right, total_predict, predict_right: 223659, 223051, 211472
+precision, recall, and f1: 0.948, 0.946, 0.947
+Epoch id: 7, Training steps: 100, Loss: 0.050117
+Epoch id: 7, Training steps: 200, Loss: 0.042601
+Epoch id: 7, Training steps: 300, Loss: 0.057117
+Epoch id: 7, Training steps: 400, Loss: 0.073635
+total_right, total_predict, predict_right: 223659, 223846, 211712
+precision, recall, and f1: 0.946, 0.947, 0.946
+Epoch id: 8, Training steps: 100, Loss: 0.030817
+Epoch id: 8, Training steps: 200, Loss: 0.042940
+Epoch id: 8, Training steps: 300, Loss: 0.023521
+Epoch id: 8, Training steps: 400, Loss: 0.032698
+total_right, total_predict, predict_right: 223659, 223125, 211534
+precision, recall, and f1: 0.948, 0.946, 0.947
+Epoch id: 9, Training steps: 100, Loss: 0.030125
+Epoch id: 9, Training steps: 200, Loss: 0.030596
+Epoch id: 9, Training steps: 300, Loss: 0.041721
+Epoch id: 9, Training steps: 400, Loss: 0.028252
+total_right, total_predict, predict_right: 223659, 223777, 212323
+precision, recall, and f1: 0.949, 0.949, 0.949
+Epoch id: 10, Training steps: 100, Loss: 0.018084
+Epoch id: 10, Training steps: 200, Loss: 0.012722
+Epoch id: 10, Training steps: 300, Loss: 0.041180
+Epoch id: 10, Training steps: 400, Loss: 0.028866
+total_right, total_predict, predict_right: 223659, 223227, 211678
+precision, recall, and f1: 0.948, 0.946, 0.947
+Epoch id: 11, Training steps: 100, Loss: 0.013718
+Epoch id: 11, Training steps: 200, Loss: 0.009665
+Epoch id: 11, Training steps: 300, Loss: 0.024948
+Epoch id: 11, Training steps: 400, Loss: 0.010250
+total_right, total_predict, predict_right: 223659, 223332, 211897
+precision, recall, and f1: 0.949, 0.947, 0.948
+Epoch id: 12, Training steps: 100, Loss: 0.011673
+Epoch id: 12, Training steps: 200, Loss: 0.025497
+Epoch id: 12, Training steps: 300, Loss: 0.017487
+Epoch id: 12, Training steps: 400, Loss: 0.007923
+total_right, total_predict, predict_right: 223659, 223477, 212421
+precision, recall, and f1: 0.951, 0.950, 0.950
+Epoch id: 13, Training steps: 100, Loss: 0.030264
+Epoch id: 13, Training steps: 200, Loss: 0.013350
+Epoch id: 13, Training steps: 300, Loss: 0.008469
+Epoch id: 13, Training steps: 400, Loss: 0.016523
+total_right, total_predict, predict_right: 223659, 223945, 212385
+precision, recall, and f1: 0.948, 0.950, 0.949
+Epoch id: 14, Training steps: 100, Loss: 0.019999
+Epoch id: 14, Training steps: 200, Loss: 0.016245
+Epoch id: 14, Training steps: 300, Loss: 0.022823
+Epoch id: 14, Training steps: 400, Loss: 0.018192
+total_right, total_predict, predict_right: 223659, 223221, 212030
+precision, recall, and f1: 0.950, 0.948, 0.949
+Epoch id: 15, Training steps: 100, Loss: 0.018297
+Epoch id: 15, Training steps: 200, Loss: 0.002445
+Epoch id: 15, Training steps: 300, Loss: 0.012693
+Epoch id: 15, Training steps: 400, Loss: 0.018188
+total_right, total_predict, predict_right: 223659, 223213, 212239
+precision, recall, and f1: 0.951, 0.949, 0.950
+Epoch id: 16, Training steps: 100, Loss: 0.009748
+Epoch id: 16, Training steps: 200, Loss: 0.003567
+Epoch id: 16, Training steps: 300, Loss: 0.032452
+Epoch id: 16, Training steps: 400, Loss: 0.022190
+total_right, total_predict, predict_right: 223659, 223379, 211947
+precision, recall, and f1: 0.949, 0.948, 0.948
+Epoch id: 17, Training steps: 100, Loss: 0.002916
+Epoch id: 17, Training steps: 200, Loss: 0.001415
+Epoch id: 17, Training steps: 300, Loss: 0.014280
+Epoch id: 17, Training steps: 400, Loss: 0.016127
+total_right, total_predict, predict_right: 223659, 224082, 212508
+precision, recall, and f1: 0.948, 0.950, 0.949
+Epoch id: 18, Training steps: 100, Loss: 0.008360
+Epoch id: 18, Training steps: 200, Loss: 0.008038
+Epoch id: 18, Training steps: 300, Loss: 0.001953
+Epoch id: 18, Training steps: 400, Loss: 0.003315
+total_right, total_predict, predict_right: 223659, 222459, 211499
+precision, recall, and f1: 0.951, 0.946, 0.948
+Epoch id: 19, Training steps: 100, Loss: 0.005938
+Epoch id: 19, Training steps: 200, Loss: 0.011282
+Epoch id: 19, Training steps: 300, Loss: 0.003246
+Epoch id: 19, Training steps: 400, Loss: 0.005314
+total_right, total_predict, predict_right: 223659, 224115, 212379
+precision, recall, and f1: 0.948, 0.950, 0.949
+Epoch id: 20, Training steps: 100, Loss: 0.001503
+Epoch id: 20, Training steps: 200, Loss: 0.003372
+Epoch id: 20, Training steps: 300, Loss: 0.009596
+Epoch id: 20, Training steps: 400, Loss: 0.009377
+total_right, total_predict, predict_right: 223659, 223377, 212324
+precision, recall, and f1: 0.951, 0.949, 0.950
+Epoch id: 21, Training steps: 100, Loss: 0.014097
+Epoch id: 21, Training steps: 200, Loss: 0.005692
+Epoch id: 21, Training steps: 300, Loss: 0.001295
+Epoch id: 21, Training steps: 400, Loss: 0.017149
+total_right, total_predict, predict_right: 223659, 223284, 212399
+precision, recall, and f1: 0.951, 0.950, 0.950
+Epoch id: 22, Training steps: 100, Loss: 0.006416
+Epoch id: 22, Training steps: 200, Loss: 0.002130
+Epoch id: 22, Training steps: 300, Loss: 0.007017
+Epoch id: 22, Training steps: 400, Loss: 0.012497
+total_right, total_predict, predict_right: 223659, 222796, 211946
+precision, recall, and f1: 0.951, 0.948, 0.949
+Epoch id: 23, Training steps: 100, Loss: 0.008711
+Epoch id: 23, Training steps: 200, Loss: 0.009218
+Epoch id: 23, Training steps: 300, Loss: 0.003983
+Epoch id: 23, Training steps: 400, Loss: 0.003580
+total_right, total_predict, predict_right: 223659, 223547, 212687
+precision, recall, and f1: 0.951, 0.951, 0.951
+Epoch id: 24, Training steps: 100, Loss: 0.011631
+Epoch id: 24, Training steps: 200, Loss: 0.001177
+Epoch id: 24, Training steps: 300, Loss: 0.003666
+Epoch id: 24, Training steps: 400, Loss: 0.014305
+total_right, total_predict, predict_right: 223659, 223274, 212251
+precision, recall, and f1: 0.951, 0.949, 0.950
+Epoch id: 25, Training steps: 100, Loss: 0.003357
+Epoch id: 25, Training steps: 200, Loss: 0.005444
+Epoch id: 25, Training steps: 300, Loss: 0.012791
+Epoch id: 25, Training steps: 400, Loss: 0.009993
+total_right, total_predict, predict_right: 223659, 223332, 212375
+precision, recall, and f1: 0.951, 0.950, 0.950
+Epoch id: 26, Training steps: 100, Loss: 0.004940
+Epoch id: 26, Training steps: 200, Loss: 0.010765
+Epoch id: 26, Training steps: 300, Loss: 0.004244
+Epoch id: 26, Training steps: 400, Loss: 0.005953
+total_right, total_predict, predict_right: 223659, 224090, 212776
+precision, recall, and f1: 0.950, 0.951, 0.950
+Epoch id: 27, Training steps: 100, Loss: 0.001127
+Epoch id: 27, Training steps: 200, Loss: 0.012897
+Epoch id: 27, Training steps: 300, Loss: 0.005873
+Epoch id: 27, Training steps: 400, Loss: 0.002987
+total_right, total_predict, predict_right: 223659, 223868, 212858
+precision, recall, and f1: 0.951, 0.952, 0.951
+Epoch id: 28, Training steps: 100, Loss: 0.000400
+Epoch id: 28, Training steps: 200, Loss: 0.001051
+Epoch id: 28, Training steps: 300, Loss: 0.007627
+Epoch id: 28, Training steps: 400, Loss: 0.003233
+total_right, total_predict, predict_right: 223659, 224220, 212865
+precision, recall, and f1: 0.949, 0.952, 0.951
+Epoch id: 29, Training steps: 100, Loss: 0.003885
+Epoch id: 29, Training steps: 200, Loss: 0.006977
+Epoch id: 29, Training steps: 300, Loss: 0.007608
+Epoch id: 29, Training steps: 400, Loss: 0.002653
+total_right, total_predict, predict_right: 223659, 223784, 212761
+precision, recall, and f1: 0.951, 0.951, 0.951
+Epoch id: 30, Training steps: 100, Loss: 0.001940
+Epoch id: 30, Training steps: 200, Loss: 0.003035
+Epoch id: 30, Training steps: 300, Loss: 0.000811
+Epoch id: 30, Training steps: 400, Loss: 0.009569
+total_right, total_predict, predict_right: 223659, 223827, 212819
+precision, recall, and f1: 0.951, 0.952, 0.951
+Epoch id: 31, Training steps: 100, Loss: 0.005949
+Epoch id: 31, Training steps: 200, Loss: 0.001360
+Epoch id: 31, Training steps: 300, Loss: 0.036551
+Epoch id: 31, Training steps: 400, Loss: 0.009747
+total_right, total_predict, predict_right: 223659, 223372, 212698
+precision, recall, and f1: 0.952, 0.951, 0.952
+Epoch id: 32, Training steps: 100, Loss: 0.002365
+Epoch id: 32, Training steps: 200, Loss: 0.010328
+Epoch id: 32, Training steps: 300, Loss: 0.006702
+Epoch id: 32, Training steps: 400, Loss: 0.003546
+total_right, total_predict, predict_right: 223659, 222639, 212100
+precision, recall, and f1: 0.953, 0.948, 0.950
+Epoch id: 33, Training steps: 100, Loss: 0.000757
+Epoch id: 33, Training steps: 200, Loss: 0.005135
+Epoch id: 33, Training steps: 300, Loss: 0.007850
+Epoch id: 33, Training steps: 400, Loss: 0.010690
+total_right, total_predict, predict_right: 223659, 223289, 212539
+precision, recall, and f1: 0.952, 0.950, 0.951
+Epoch id: 34, Training steps: 100, Loss: 0.005571
+Epoch id: 34, Training steps: 200, Loss: 0.002226
+Epoch id: 34, Training steps: 300, Loss: 0.001534
+Epoch id: 34, Training steps: 400, Loss: 0.016685
+total_right, total_predict, predict_right: 223659, 223632, 212646
+precision, recall, and f1: 0.951, 0.951, 0.951
+Epoch id: 35, Training steps: 100, Loss: 0.004210
+Epoch id: 35, Training steps: 200, Loss: 0.014801
+Epoch id: 35, Training steps: 300, Loss: 0.002302
+Epoch id: 35, Training steps: 400, Loss: 0.006092
+total_right, total_predict, predict_right: 223659, 223335, 212431
+precision, recall, and f1: 0.951, 0.950, 0.950
+Epoch id: 36, Training steps: 100, Loss: 0.006985
+Epoch id: 36, Training steps: 200, Loss: 0.005060
+Epoch id: 36, Training steps: 300, Loss: 0.005363
+Epoch id: 36, Training steps: 400, Loss: 0.003378
+total_right, total_predict, predict_right: 223659, 224433, 213148
+precision, recall, and f1: 0.950, 0.953, 0.951
+Epoch id: 37, Training steps: 100, Loss: 0.003953
+Epoch id: 37, Training steps: 200, Loss: 0.001352
+Epoch id: 37, Training steps: 300, Loss: 0.002258
+Epoch id: 37, Training steps: 400, Loss: 0.004202
+total_right, total_predict, predict_right: 223659, 223945, 212907
+precision, recall, and f1: 0.951, 0.952, 0.951
+Epoch id: 38, Training steps: 100, Loss: 0.010700
+Epoch id: 38, Training steps: 200, Loss: 0.001893
+Epoch id: 38, Training steps: 300, Loss: 0.006041
+Epoch id: 38, Training steps: 400, Loss: 0.007961
+total_right, total_predict, predict_right: 223659, 224491, 213097
+precision, recall, and f1: 0.949, 0.953, 0.951
+Epoch id: 39, Training steps: 100, Loss: 0.006006
+Epoch id: 39, Training steps: 200, Loss: 0.000957
+Epoch id: 39, Training steps: 300, Loss: 0.002946
+Epoch id: 39, Training steps: 400, Loss: 0.007563
+total_right, total_predict, predict_right: 223659, 224060, 213031
+precision, recall, and f1: 0.951, 0.952, 0.952
+Epoch id: 40, Training steps: 100, Loss: 0.002356
+Epoch id: 40, Training steps: 200, Loss: 0.000743
+Epoch id: 40, Training steps: 300, Loss: 0.009111
+Epoch id: 40, Training steps: 400, Loss: 0.007715
+total_right, total_predict, predict_right: 223659, 223050, 212565
+precision, recall, and f1: 0.953, 0.950, 0.952
+Epoch id: 41, Training steps: 100, Loss: 0.003811
+Epoch id: 41, Training steps: 200, Loss: 0.002726
+Epoch id: 41, Training steps: 300, Loss: 0.007039
+Epoch id: 41, Training steps: 400, Loss: 0.004053
+total_right, total_predict, predict_right: 223659, 223556, 212819
+precision, recall, and f1: 0.952, 0.952, 0.952
+Epoch id: 42, Training steps: 100, Loss: 0.002314
+Epoch id: 42, Training steps: 200, Loss: 0.003208
+Epoch id: 42, Training steps: 300, Loss: 0.002761
+Epoch id: 42, Training steps: 400, Loss: 0.006901
+total_right, total_predict, predict_right: 223659, 223481, 212761
+precision, recall, and f1: 0.952, 0.951, 0.952
+Epoch id: 43, Training steps: 100, Loss: 0.003371
+Epoch id: 43, Training steps: 200, Loss: 0.003607
+Epoch id: 43, Training steps: 300, Loss: 0.003238
+Epoch id: 43, Training steps: 400, Loss: 0.009115
+total_right, total_predict, predict_right: 223659, 223325, 212760
+precision, recall, and f1: 0.953, 0.951, 0.952
+Epoch id: 44, Training steps: 100, Loss: 0.012222
+Epoch id: 44, Training steps: 200, Loss: 0.001226
+Epoch id: 44, Training steps: 300, Loss: 0.002951
+Epoch id: 44, Training steps: 400, Loss: 0.001778
+total_right, total_predict, predict_right: 223659, 223336, 212454
+precision, recall, and f1: 0.951, 0.950, 0.951
+Epoch id: 45, Training steps: 100, Loss: 0.005516
+Epoch id: 45, Training steps: 200, Loss: 0.000936
+Epoch id: 45, Training steps: 300, Loss: 0.000870
+Epoch id: 45, Training steps: 400, Loss: 0.016985
+total_right, total_predict, predict_right: 223659, 223136, 212625
+precision, recall, and f1: 0.953, 0.951, 0.952
+Epoch id: 46, Training steps: 100, Loss: 0.001433
+Epoch id: 46, Training steps: 200, Loss: 0.000588
+Epoch id: 46, Training steps: 300, Loss: 0.003239
+Epoch id: 46, Training steps: 400, Loss: 0.010881
+total_right, total_predict, predict_right: 223659, 223698, 213022
+precision, recall, and f1: 0.952, 0.952, 0.952
+Epoch id: 47, Training steps: 100, Loss: 0.009638
+Epoch id: 47, Training steps: 200, Loss: 0.006334
+Epoch id: 47, Training steps: 300, Loss: 0.005336
+Epoch id: 47, Training steps: 400, Loss: 0.001080
+total_right, total_predict, predict_right: 223659, 223535, 212744
+precision, recall, and f1: 0.952, 0.951, 0.951
+Epoch id: 48, Training steps: 100, Loss: 0.001183
+Epoch id: 48, Training steps: 200, Loss: 0.007669
+Epoch id: 48, Training steps: 300, Loss: 0.000804
+Epoch id: 48, Training steps: 400, Loss: 0.002564
+total_right, total_predict, predict_right: 223659, 223196, 212511
+precision, recall, and f1: 0.952, 0.950, 0.951
+Epoch id: 49, Training steps: 100, Loss: 0.004637
+Epoch id: 49, Training steps: 200, Loss: 0.002931
+Epoch id: 49, Training steps: 300, Loss: 0.001848
+Epoch id: 49, Training steps: 400, Loss: 0.001776
+total_right, total_predict, predict_right: 223659, 223603, 212873
+precision, recall, and f1: 0.952, 0.952, 0.952
+Epoch id: 50, Training steps: 100, Loss: 0.006820
+Epoch id: 50, Training steps: 200, Loss: 0.004255
+Epoch id: 50, Training steps: 300, Loss: 0.006934
+Epoch id: 50, Training steps: 400, Loss: 0.007331
+total_right, total_predict, predict_right: 223659, 223667, 212931
+precision, recall, and f1: 0.952, 0.952, 0.952
+Start evaluation.
+total_right, total_predict, predict_right: 104371, 103824, 96369
+precision, recall, and f1: 0.928, 0.923, 0.926
+Loading the Glove Embedding...
+Embedding size:  300
+Transitions:  tensor([[    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [-1000., -1000., -1000., -1000., -1000., -1000., -1000.]])
+4 GPUs are available. Let's use them.
+Using the criterion func in the model...
+--------------- The 2-th fold as the validation set... ---------------
+Epoch id: 1, Training steps: 100, Loss: 1.188974
+Epoch id: 1, Training steps: 200, Loss: 1.180365
+Epoch id: 1, Training steps: 300, Loss: 0.530335
+Epoch id: 1, Training steps: 400, Loss: 0.688409
+total_right, total_predict, predict_right: 225406, 223821, 203258
+precision, recall, and f1: 0.908, 0.902, 0.905
+Epoch id: 2, Training steps: 100, Loss: 0.396344
+Epoch id: 2, Training steps: 200, Loss: 0.375030
+Epoch id: 2, Training steps: 300, Loss: 0.383159
+Epoch id: 2, Training steps: 400, Loss: 0.403898
+total_right, total_predict, predict_right: 225406, 225221, 209160
+precision, recall, and f1: 0.929, 0.928, 0.928
+Epoch id: 3, Training steps: 100, Loss: 0.286394
+Epoch id: 3, Training steps: 200, Loss: 0.315603
+Epoch id: 3, Training steps: 300, Loss: 0.178669
+Epoch id: 3, Training steps: 400, Loss: 0.213003
+total_right, total_predict, predict_right: 225406, 225045, 211489
+precision, recall, and f1: 0.940, 0.938, 0.939
+Epoch id: 4, Training steps: 100, Loss: 0.160581
+Epoch id: 4, Training steps: 200, Loss: 0.177347
+Epoch id: 4, Training steps: 300, Loss: 0.187344
+Epoch id: 4, Training steps: 400, Loss: 0.164282
+total_right, total_predict, predict_right: 225406, 225748, 212357
+precision, recall, and f1: 0.941, 0.942, 0.941
+Epoch id: 5, Training steps: 100, Loss: 0.073215
+Epoch id: 5, Training steps: 200, Loss: 0.178566
+Epoch id: 5, Training steps: 300, Loss: 0.095009
+Epoch id: 5, Training steps: 400, Loss: 0.140795
+total_right, total_predict, predict_right: 225406, 223703, 211991
+precision, recall, and f1: 0.948, 0.940, 0.944
+Epoch id: 6, Training steps: 100, Loss: 0.074594
+Epoch id: 6, Training steps: 200, Loss: 0.074741
+Epoch id: 6, Training steps: 300, Loss: 0.089586
+Epoch id: 6, Training steps: 400, Loss: 0.099239
+total_right, total_predict, predict_right: 225406, 226046, 212953
+precision, recall, and f1: 0.942, 0.945, 0.943
+Epoch id: 7, Training steps: 100, Loss: 0.056501
+Epoch id: 7, Training steps: 200, Loss: 0.104485
+Epoch id: 7, Training steps: 300, Loss: 0.057140
+Epoch id: 7, Training steps: 400, Loss: 0.076008
+total_right, total_predict, predict_right: 225406, 225208, 213057
+precision, recall, and f1: 0.946, 0.945, 0.946
+Epoch id: 8, Training steps: 100, Loss: 0.048964
+Epoch id: 8, Training steps: 200, Loss: 0.031277
+Epoch id: 8, Training steps: 300, Loss: 0.042744
+Epoch id: 8, Training steps: 400, Loss: 0.033112
+total_right, total_predict, predict_right: 225406, 225118, 212965
+precision, recall, and f1: 0.946, 0.945, 0.945
+Epoch id: 9, Training steps: 100, Loss: 0.017008
+Epoch id: 9, Training steps: 200, Loss: 0.050545
+Epoch id: 9, Training steps: 300, Loss: 0.060293
+Epoch id: 9, Training steps: 400, Loss: 0.029417
+total_right, total_predict, predict_right: 225406, 224836, 213036
+precision, recall, and f1: 0.948, 0.945, 0.946
+Epoch id: 10, Training steps: 100, Loss: 0.037350
+Epoch id: 10, Training steps: 200, Loss: 0.030321
+Epoch id: 10, Training steps: 300, Loss: 0.026058
+Epoch id: 10, Training steps: 400, Loss: 0.027075
+total_right, total_predict, predict_right: 225406, 225492, 213581
+precision, recall, and f1: 0.947, 0.948, 0.947
+Epoch id: 11, Training steps: 100, Loss: 0.012777
+Epoch id: 11, Training steps: 200, Loss: 0.007425
+Epoch id: 11, Training steps: 300, Loss: 0.028471
+Epoch id: 11, Training steps: 400, Loss: 0.023476
+total_right, total_predict, predict_right: 225406, 224717, 213032
+precision, recall, and f1: 0.948, 0.945, 0.947
+Epoch id: 12, Training steps: 100, Loss: 0.008368
+Epoch id: 12, Training steps: 200, Loss: 0.012970
+Epoch id: 12, Training steps: 300, Loss: 0.020226
+Epoch id: 12, Training steps: 400, Loss: 0.014730
+total_right, total_predict, predict_right: 225406, 225737, 213668
+precision, recall, and f1: 0.947, 0.948, 0.947
+Epoch id: 13, Training steps: 100, Loss: 0.024565
+Epoch id: 13, Training steps: 200, Loss: 0.025076
+Epoch id: 13, Training steps: 300, Loss: 0.006065
+Epoch id: 13, Training steps: 400, Loss: 0.016642
+total_right, total_predict, predict_right: 225406, 225646, 213563
+precision, recall, and f1: 0.946, 0.947, 0.947
+Epoch id: 14, Training steps: 100, Loss: 0.015326
+Epoch id: 14, Training steps: 200, Loss: 0.011126
+Epoch id: 14, Training steps: 300, Loss: 0.021824
+Epoch id: 14, Training steps: 400, Loss: 0.011980
+total_right, total_predict, predict_right: 225406, 224887, 213402
+precision, recall, and f1: 0.949, 0.947, 0.948
+Epoch id: 15, Training steps: 100, Loss: 0.012726
+Epoch id: 15, Training steps: 200, Loss: 0.004475
+Epoch id: 15, Training steps: 300, Loss: 0.023108
+Epoch id: 15, Training steps: 400, Loss: 0.023094
+total_right, total_predict, predict_right: 225406, 224122, 212943
+precision, recall, and f1: 0.950, 0.945, 0.947
+Epoch id: 16, Training steps: 100, Loss: 0.012215
+Epoch id: 16, Training steps: 200, Loss: 0.003929
+Epoch id: 16, Training steps: 300, Loss: 0.015745
+Epoch id: 16, Training steps: 400, Loss: 0.022121
+total_right, total_predict, predict_right: 225406, 225669, 213671
+precision, recall, and f1: 0.947, 0.948, 0.947
+Epoch id: 17, Training steps: 100, Loss: 0.003452
+Epoch id: 17, Training steps: 200, Loss: 0.009987
+Epoch id: 17, Training steps: 300, Loss: 0.028767
+Epoch id: 17, Training steps: 400, Loss: 0.018362
+total_right, total_predict, predict_right: 225406, 223856, 212798
+precision, recall, and f1: 0.951, 0.944, 0.947
+Epoch id: 18, Training steps: 100, Loss: 0.010681
+Epoch id: 18, Training steps: 200, Loss: 0.006620
+Epoch id: 18, Training steps: 300, Loss: 0.016413
+Epoch id: 18, Training steps: 400, Loss: 0.006529
+total_right, total_predict, predict_right: 225406, 225643, 213614
+precision, recall, and f1: 0.947, 0.948, 0.947
+Epoch id: 19, Training steps: 100, Loss: 0.004416
+Epoch id: 19, Training steps: 200, Loss: 0.012156
+Epoch id: 19, Training steps: 300, Loss: 0.010399
+Epoch id: 19, Training steps: 400, Loss: 0.012966
+total_right, total_predict, predict_right: 225406, 224394, 213187
+precision, recall, and f1: 0.950, 0.946, 0.948
+Epoch id: 20, Training steps: 100, Loss: 0.003523
+Epoch id: 20, Training steps: 200, Loss: 0.002747
+Epoch id: 20, Training steps: 300, Loss: 0.002991
+Epoch id: 20, Training steps: 400, Loss: 0.001350
+total_right, total_predict, predict_right: 225406, 224505, 213381
+precision, recall, and f1: 0.950, 0.947, 0.949
+Epoch id: 21, Training steps: 100, Loss: 0.005581
+Epoch id: 21, Training steps: 200, Loss: 0.005512
+Epoch id: 21, Training steps: 300, Loss: 0.009079
+Epoch id: 21, Training steps: 400, Loss: 0.004631
+total_right, total_predict, predict_right: 225406, 224805, 213534
+precision, recall, and f1: 0.950, 0.947, 0.949
+Epoch id: 22, Training steps: 100, Loss: 0.003408
+Epoch id: 22, Training steps: 200, Loss: 0.010939
+Epoch id: 22, Training steps: 300, Loss: 0.009510
+Epoch id: 22, Training steps: 400, Loss: 0.008587
+total_right, total_predict, predict_right: 225406, 225832, 214080
+precision, recall, and f1: 0.948, 0.950, 0.949
+Epoch id: 23, Training steps: 100, Loss: 0.004152
+Epoch id: 23, Training steps: 200, Loss: 0.005318
+Epoch id: 23, Training steps: 300, Loss: 0.007780
+Epoch id: 23, Training steps: 400, Loss: 0.008020
+total_right, total_predict, predict_right: 225406, 224574, 213507
+precision, recall, and f1: 0.951, 0.947, 0.949
+Epoch id: 24, Training steps: 100, Loss: 0.009914
+Epoch id: 24, Training steps: 200, Loss: 0.006599
+Epoch id: 24, Training steps: 300, Loss: 0.005616
+Epoch id: 24, Training steps: 400, Loss: 0.009098
+total_right, total_predict, predict_right: 225406, 225748, 214179
+precision, recall, and f1: 0.949, 0.950, 0.949
+Epoch id: 25, Training steps: 100, Loss: 0.005054
+Epoch id: 25, Training steps: 200, Loss: 0.002373
+Epoch id: 25, Training steps: 300, Loss: 0.001770
+Epoch id: 25, Training steps: 400, Loss: 0.003935
+total_right, total_predict, predict_right: 225406, 225423, 213735
+precision, recall, and f1: 0.948, 0.948, 0.948
+Epoch id: 26, Training steps: 100, Loss: 0.002138
+Epoch id: 26, Training steps: 200, Loss: 0.002036
+Epoch id: 26, Training steps: 300, Loss: 0.006198
+Epoch id: 26, Training steps: 400, Loss: 0.005589
+total_right, total_predict, predict_right: 225406, 225455, 214114
+precision, recall, and f1: 0.950, 0.950, 0.950
+Epoch id: 27, Training steps: 100, Loss: 0.005281
+Epoch id: 27, Training steps: 200, Loss: 0.002718
+Epoch id: 27, Training steps: 300, Loss: 0.009987
+Epoch id: 27, Training steps: 400, Loss: 0.006445
+total_right, total_predict, predict_right: 225406, 225229, 213776
+precision, recall, and f1: 0.949, 0.948, 0.949
+Epoch id: 28, Training steps: 100, Loss: 0.014826
+Epoch id: 28, Training steps: 200, Loss: 0.010351
+Epoch id: 28, Training steps: 300, Loss: 0.011612
+Epoch id: 28, Training steps: 400, Loss: 0.001909
+total_right, total_predict, predict_right: 225406, 224703, 213506
+precision, recall, and f1: 0.950, 0.947, 0.949
+Epoch id: 29, Training steps: 100, Loss: 0.009649
+Epoch id: 29, Training steps: 200, Loss: 0.002890
+Epoch id: 29, Training steps: 300, Loss: 0.000586
+Epoch id: 29, Training steps: 400, Loss: 0.001106
+total_right, total_predict, predict_right: 225406, 225073, 213820
+precision, recall, and f1: 0.950, 0.949, 0.949
+Epoch id: 30, Training steps: 100, Loss: 0.001887
+Epoch id: 30, Training steps: 200, Loss: 0.001778
+Epoch id: 30, Training steps: 300, Loss: 0.001064
+Epoch id: 30, Training steps: 400, Loss: 0.002438
+total_right, total_predict, predict_right: 225406, 225084, 213727
+precision, recall, and f1: 0.950, 0.948, 0.949
+Epoch id: 31, Training steps: 100, Loss: 0.018148
+Epoch id: 31, Training steps: 200, Loss: 0.013710
+Epoch id: 31, Training steps: 300, Loss: 0.015844
+Epoch id: 31, Training steps: 400, Loss: 0.015156
+total_right, total_predict, predict_right: 225406, 225012, 213844
+precision, recall, and f1: 0.950, 0.949, 0.950
+Epoch id: 32, Training steps: 100, Loss: 0.007427
+Epoch id: 32, Training steps: 200, Loss: 0.002514
+Epoch id: 32, Training steps: 300, Loss: 0.000992
+Epoch id: 32, Training steps: 400, Loss: 0.006952
+total_right, total_predict, predict_right: 225406, 225319, 214028
+precision, recall, and f1: 0.950, 0.950, 0.950
+Epoch id: 33, Training steps: 100, Loss: 0.001989
+Epoch id: 33, Training steps: 200, Loss: 0.000599
+Epoch id: 33, Training steps: 300, Loss: 0.003290
+Epoch id: 33, Training steps: 400, Loss: 0.001423
+total_right, total_predict, predict_right: 225406, 224965, 213817
+precision, recall, and f1: 0.950, 0.949, 0.950
+Epoch id: 34, Training steps: 100, Loss: 0.003080
+Epoch id: 34, Training steps: 200, Loss: 0.002039
+Epoch id: 34, Training steps: 300, Loss: 0.004261
+Epoch id: 34, Training steps: 400, Loss: 0.004553
+total_right, total_predict, predict_right: 225406, 224859, 213803
+precision, recall, and f1: 0.951, 0.949, 0.950
+Epoch id: 35, Training steps: 100, Loss: 0.013680
+Epoch id: 35, Training steps: 200, Loss: 0.001127
+Epoch id: 35, Training steps: 300, Loss: 0.012089
+Epoch id: 35, Training steps: 400, Loss: 0.005184
+total_right, total_predict, predict_right: 225406, 225543, 214274
+precision, recall, and f1: 0.950, 0.951, 0.950
+Epoch id: 36, Training steps: 100, Loss: 0.002073
+Epoch id: 36, Training steps: 200, Loss: 0.002874
+Epoch id: 36, Training steps: 300, Loss: 0.008035
+Epoch id: 36, Training steps: 400, Loss: 0.013301
+total_right, total_predict, predict_right: 225406, 224700, 213543
+precision, recall, and f1: 0.950, 0.947, 0.949
+Epoch id: 37, Training steps: 100, Loss: 0.005877
+Epoch id: 37, Training steps: 200, Loss: 0.002662
+Epoch id: 37, Training steps: 300, Loss: 0.008324
+Epoch id: 37, Training steps: 400, Loss: 0.003578
+total_right, total_predict, predict_right: 225406, 224781, 213742
+precision, recall, and f1: 0.951, 0.948, 0.950
+Epoch id: 38, Training steps: 100, Loss: 0.002224
+Epoch id: 38, Training steps: 200, Loss: 0.002869
+Epoch id: 38, Training steps: 300, Loss: 0.006946
+Epoch id: 38, Training steps: 400, Loss: 0.006107
+total_right, total_predict, predict_right: 225406, 225967, 214595
+precision, recall, and f1: 0.950, 0.952, 0.951
+Epoch id: 39, Training steps: 100, Loss: 0.012918
+Epoch id: 39, Training steps: 200, Loss: 0.005497
+Epoch id: 39, Training steps: 300, Loss: 0.002668
+Epoch id: 39, Training steps: 400, Loss: 0.006706
+total_right, total_predict, predict_right: 225406, 225474, 214257
+precision, recall, and f1: 0.950, 0.951, 0.950
+Epoch id: 40, Training steps: 100, Loss: 0.004200
+Epoch id: 40, Training steps: 200, Loss: 0.012650
+Epoch id: 40, Training steps: 300, Loss: 0.005596
+Epoch id: 40, Training steps: 400, Loss: 0.001189
+total_right, total_predict, predict_right: 225406, 225329, 213986
+precision, recall, and f1: 0.950, 0.949, 0.949
+Epoch id: 41, Training steps: 100, Loss: 0.008245
+Epoch id: 41, Training steps: 200, Loss: 0.001051
+Epoch id: 41, Training steps: 300, Loss: 0.001754
+Epoch id: 41, Training steps: 400, Loss: 0.004869
+total_right, total_predict, predict_right: 225406, 225894, 214390
+precision, recall, and f1: 0.949, 0.951, 0.950
+Epoch id: 42, Training steps: 100, Loss: 0.000562
+Epoch id: 42, Training steps: 200, Loss: 0.003885
+Epoch id: 42, Training steps: 300, Loss: 0.004239
+Epoch id: 42, Training steps: 400, Loss: 0.007041
+total_right, total_predict, predict_right: 225406, 225176, 213877
+precision, recall, and f1: 0.950, 0.949, 0.949
+Epoch id: 43, Training steps: 100, Loss: 0.002284
+Epoch id: 43, Training steps: 200, Loss: 0.006738
+Epoch id: 43, Training steps: 300, Loss: 0.011160
+Epoch id: 43, Training steps: 400, Loss: 0.009859
+total_right, total_predict, predict_right: 225406, 225171, 213910
+precision, recall, and f1: 0.950, 0.949, 0.949
+Epoch id: 44, Training steps: 100, Loss: 0.003603
+Epoch id: 44, Training steps: 200, Loss: 0.000891
+Epoch id: 44, Training steps: 300, Loss: 0.005217
+Epoch id: 44, Training steps: 400, Loss: 0.001118
+total_right, total_predict, predict_right: 225406, 224989, 213919
+precision, recall, and f1: 0.951, 0.949, 0.950
+Epoch id: 45, Training steps: 100, Loss: 0.010784
+Epoch id: 45, Training steps: 200, Loss: 0.007292
+Epoch id: 45, Training steps: 300, Loss: 0.002439
+Epoch id: 45, Training steps: 400, Loss: 0.001274
+total_right, total_predict, predict_right: 225406, 224476, 213647
+precision, recall, and f1: 0.952, 0.948, 0.950
+Epoch id: 46, Training steps: 100, Loss: 0.007050
+Epoch id: 46, Training steps: 200, Loss: 0.002926
+Epoch id: 46, Training steps: 300, Loss: 0.007062
+Epoch id: 46, Training steps: 400, Loss: 0.006172
+total_right, total_predict, predict_right: 225406, 224907, 213957
+precision, recall, and f1: 0.951, 0.949, 0.950
+Epoch id: 47, Training steps: 100, Loss: 0.003937
+Epoch id: 47, Training steps: 200, Loss: 0.007082
+Epoch id: 47, Training steps: 300, Loss: 0.001488
+Epoch id: 47, Training steps: 400, Loss: 0.006116
+total_right, total_predict, predict_right: 225406, 225718, 214333
+precision, recall, and f1: 0.950, 0.951, 0.950
+Epoch id: 48, Training steps: 100, Loss: 0.002445
+Epoch id: 48, Training steps: 200, Loss: 0.009704
+Epoch id: 48, Training steps: 300, Loss: 0.006233
+Epoch id: 48, Training steps: 400, Loss: 0.002022
+total_right, total_predict, predict_right: 225406, 225224, 214022
+precision, recall, and f1: 0.950, 0.949, 0.950
+Epoch id: 49, Training steps: 100, Loss: 0.003065
+Epoch id: 49, Training steps: 200, Loss: 0.007986
+Epoch id: 49, Training steps: 300, Loss: 0.008997
+Epoch id: 49, Training steps: 400, Loss: 0.001012
+total_right, total_predict, predict_right: 225406, 225702, 214368
+precision, recall, and f1: 0.950, 0.951, 0.950
+Epoch id: 50, Training steps: 100, Loss: 0.003937
+Epoch id: 50, Training steps: 200, Loss: 0.002282
+Epoch id: 50, Training steps: 300, Loss: 0.000727
+Epoch id: 50, Training steps: 400, Loss: 0.004700
+total_right, total_predict, predict_right: 225406, 224870, 213790
+precision, recall, and f1: 0.951, 0.948, 0.950
+Start evaluation.
+total_right, total_predict, predict_right: 104371, 103742, 96482
+precision, recall, and f1: 0.930, 0.924, 0.927
+Loading the Glove Embedding...
+Embedding size:  300
+Transitions:  tensor([[    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [-1000., -1000., -1000., -1000., -1000., -1000., -1000.]])
+4 GPUs are available. Let's use them.
+Using the criterion func in the model...
+--------------- The 3-th fold as the validation set... ---------------
+Epoch id: 1, Training steps: 100, Loss: 1.344035
+Epoch id: 1, Training steps: 200, Loss: 0.804933
+Epoch id: 1, Training steps: 300, Loss: 0.664864
+Epoch id: 1, Training steps: 400, Loss: 0.608860
+total_right, total_predict, predict_right: 225297, 227219, 206607
+precision, recall, and f1: 0.909, 0.917, 0.913
+Epoch id: 2, Training steps: 100, Loss: 0.596169
+Epoch id: 2, Training steps: 200, Loss: 0.451815
+Epoch id: 2, Training steps: 300, Loss: 0.433290
+Epoch id: 2, Training steps: 400, Loss: 0.406448
+total_right, total_predict, predict_right: 225297, 225474, 211317
+precision, recall, and f1: 0.937, 0.938, 0.938
+Epoch id: 3, Training steps: 100, Loss: 0.303001
+Epoch id: 3, Training steps: 200, Loss: 0.293877
+Epoch id: 3, Training steps: 300, Loss: 0.243132
+Epoch id: 3, Training steps: 400, Loss: 0.274444
+total_right, total_predict, predict_right: 225297, 227170, 213188
+precision, recall, and f1: 0.938, 0.946, 0.942
+Epoch id: 4, Training steps: 100, Loss: 0.155252
+Epoch id: 4, Training steps: 200, Loss: 0.186914
+Epoch id: 4, Training steps: 300, Loss: 0.249474
+Epoch id: 4, Training steps: 400, Loss: 0.180937
+total_right, total_predict, predict_right: 225297, 227477, 214013
+precision, recall, and f1: 0.941, 0.950, 0.945
+Epoch id: 5, Training steps: 100, Loss: 0.082458
+Epoch id: 5, Training steps: 200, Loss: 0.129248
+Epoch id: 5, Training steps: 300, Loss: 0.137697
+Epoch id: 5, Training steps: 400, Loss: 0.121521
+total_right, total_predict, predict_right: 225297, 225455, 214018
+precision, recall, and f1: 0.949, 0.950, 0.950
+Epoch id: 6, Training steps: 100, Loss: 0.073084
+Epoch id: 6, Training steps: 200, Loss: 0.085268
+Epoch id: 6, Training steps: 300, Loss: 0.052076
+Epoch id: 6, Training steps: 400, Loss: 0.059866
+total_right, total_predict, predict_right: 225297, 224166, 213399
+precision, recall, and f1: 0.952, 0.947, 0.950
+Epoch id: 7, Training steps: 100, Loss: 0.058603
+Epoch id: 7, Training steps: 200, Loss: 0.080847
+Epoch id: 7, Training steps: 300, Loss: 0.056299
+Epoch id: 7, Training steps: 400, Loss: 0.046094
+total_right, total_predict, predict_right: 225297, 226614, 214570
+precision, recall, and f1: 0.947, 0.952, 0.950
+Epoch id: 8, Training steps: 100, Loss: 0.075928
+Epoch id: 8, Training steps: 200, Loss: 0.047638
+Epoch id: 8, Training steps: 300, Loss: 0.039946
+Epoch id: 8, Training steps: 400, Loss: 0.048817
+total_right, total_predict, predict_right: 225297, 225595, 214403
+precision, recall, and f1: 0.950, 0.952, 0.951
+Epoch id: 9, Training steps: 100, Loss: 0.024086
+Epoch id: 9, Training steps: 200, Loss: 0.046141
+Epoch id: 9, Training steps: 300, Loss: 0.031729
+Epoch id: 9, Training steps: 400, Loss: 0.028431
+total_right, total_predict, predict_right: 225297, 225666, 214154
+precision, recall, and f1: 0.949, 0.951, 0.950
+Epoch id: 10, Training steps: 100, Loss: 0.021000
+Epoch id: 10, Training steps: 200, Loss: 0.021231
+Epoch id: 10, Training steps: 300, Loss: 0.009295
+Epoch id: 10, Training steps: 400, Loss: 0.028746
+total_right, total_predict, predict_right: 225297, 225832, 214330
+precision, recall, and f1: 0.949, 0.951, 0.950
+Epoch id: 11, Training steps: 100, Loss: 0.005569
+Epoch id: 11, Training steps: 200, Loss: 0.032015
+Epoch id: 11, Training steps: 300, Loss: 0.021046
+Epoch id: 11, Training steps: 400, Loss: 0.016918
+total_right, total_predict, predict_right: 225297, 224193, 213655
+precision, recall, and f1: 0.953, 0.948, 0.951
+Epoch id: 12, Training steps: 100, Loss: 0.020546
+Epoch id: 12, Training steps: 200, Loss: 0.008528
+Epoch id: 12, Training steps: 300, Loss: 0.017767
+Epoch id: 12, Training steps: 400, Loss: 0.033390
+total_right, total_predict, predict_right: 225297, 224978, 214281
+precision, recall, and f1: 0.952, 0.951, 0.952
+Epoch id: 13, Training steps: 100, Loss: 0.026592
+Epoch id: 13, Training steps: 200, Loss: 0.011866
+Epoch id: 13, Training steps: 300, Loss: 0.014622
+Epoch id: 13, Training steps: 400, Loss: 0.020306
+total_right, total_predict, predict_right: 225297, 226284, 214906
+precision, recall, and f1: 0.950, 0.954, 0.952
+Epoch id: 14, Training steps: 100, Loss: 0.016214
+Epoch id: 14, Training steps: 200, Loss: 0.007463
+Epoch id: 14, Training steps: 300, Loss: 0.016945
+Epoch id: 14, Training steps: 400, Loss: 0.021679
+total_right, total_predict, predict_right: 225297, 225851, 214519
+precision, recall, and f1: 0.950, 0.952, 0.951
+Epoch id: 15, Training steps: 100, Loss: 0.014254
+Epoch id: 15, Training steps: 200, Loss: 0.003721
+Epoch id: 15, Training steps: 300, Loss: 0.015915
+Epoch id: 15, Training steps: 400, Loss: 0.007654
+total_right, total_predict, predict_right: 225297, 224997, 214466
+precision, recall, and f1: 0.953, 0.952, 0.953
+Epoch id: 16, Training steps: 100, Loss: 0.011923
+Epoch id: 16, Training steps: 200, Loss: 0.004406
+Epoch id: 16, Training steps: 300, Loss: 0.012472
+Epoch id: 16, Training steps: 400, Loss: 0.015638
+total_right, total_predict, predict_right: 225297, 225502, 214685
+precision, recall, and f1: 0.952, 0.953, 0.952
+Epoch id: 17, Training steps: 100, Loss: 0.023493
+Epoch id: 17, Training steps: 200, Loss: 0.006233
+Epoch id: 17, Training steps: 300, Loss: 0.017437
+Epoch id: 17, Training steps: 400, Loss: 0.007952
+total_right, total_predict, predict_right: 225297, 225314, 214656
+precision, recall, and f1: 0.953, 0.953, 0.953
+Epoch id: 18, Training steps: 100, Loss: 0.004829
+Epoch id: 18, Training steps: 200, Loss: 0.006575
+Epoch id: 18, Training steps: 300, Loss: 0.017380
+Epoch id: 18, Training steps: 400, Loss: 0.018736
+total_right, total_predict, predict_right: 225297, 225911, 214987
+precision, recall, and f1: 0.952, 0.954, 0.953
+Epoch id: 19, Training steps: 100, Loss: 0.009661
+Epoch id: 19, Training steps: 200, Loss: 0.006773
+Epoch id: 19, Training steps: 300, Loss: 0.001616
+Epoch id: 19, Training steps: 400, Loss: 0.005199
+total_right, total_predict, predict_right: 225297, 225477, 214777
+precision, recall, and f1: 0.953, 0.953, 0.953
+Epoch id: 20, Training steps: 100, Loss: 0.003410
+Epoch id: 20, Training steps: 200, Loss: 0.006330
+Epoch id: 20, Training steps: 300, Loss: 0.003004
+Epoch id: 20, Training steps: 400, Loss: 0.013155
+total_right, total_predict, predict_right: 225297, 225018, 214743
+precision, recall, and f1: 0.954, 0.953, 0.954
+Epoch id: 21, Training steps: 100, Loss: 0.001972
+Epoch id: 21, Training steps: 200, Loss: 0.002197
+Epoch id: 21, Training steps: 300, Loss: 0.014490
+Epoch id: 21, Training steps: 400, Loss: 0.014919
+total_right, total_predict, predict_right: 225297, 225124, 214945
+precision, recall, and f1: 0.955, 0.954, 0.954
+Epoch id: 22, Training steps: 100, Loss: 0.019360
+Epoch id: 22, Training steps: 200, Loss: 0.004610
+Epoch id: 22, Training steps: 300, Loss: 0.018124
+Epoch id: 22, Training steps: 400, Loss: 0.007177
+total_right, total_predict, predict_right: 225297, 224972, 214701
+precision, recall, and f1: 0.954, 0.953, 0.954
+Epoch id: 23, Training steps: 100, Loss: 0.003324
+Epoch id: 23, Training steps: 200, Loss: 0.001184
+Epoch id: 23, Training steps: 300, Loss: 0.008978
+Epoch id: 23, Training steps: 400, Loss: 0.006302
+total_right, total_predict, predict_right: 225297, 225020, 215051
+precision, recall, and f1: 0.956, 0.955, 0.955
+Epoch id: 24, Training steps: 100, Loss: 0.002563
+Epoch id: 24, Training steps: 200, Loss: 0.004475
+Epoch id: 24, Training steps: 300, Loss: 0.008669
+Epoch id: 24, Training steps: 400, Loss: 0.008308
+total_right, total_predict, predict_right: 225297, 224910, 214772
+precision, recall, and f1: 0.955, 0.953, 0.954
+Epoch id: 25, Training steps: 100, Loss: 0.004210
+Epoch id: 25, Training steps: 200, Loss: 0.002499
+Epoch id: 25, Training steps: 300, Loss: 0.001520
+Epoch id: 25, Training steps: 400, Loss: 0.005224
+total_right, total_predict, predict_right: 225297, 225720, 214917
+precision, recall, and f1: 0.952, 0.954, 0.953
+Epoch id: 26, Training steps: 100, Loss: 0.004749
+Epoch id: 26, Training steps: 200, Loss: 0.001839
+Epoch id: 26, Training steps: 300, Loss: 0.002159
+Epoch id: 26, Training steps: 400, Loss: 0.006067
+total_right, total_predict, predict_right: 225297, 224921, 214800
+precision, recall, and f1: 0.955, 0.953, 0.954
+Epoch id: 27, Training steps: 100, Loss: 0.004119
+Epoch id: 27, Training steps: 200, Loss: 0.002094
+Epoch id: 27, Training steps: 300, Loss: 0.012663
+Epoch id: 27, Training steps: 400, Loss: 0.005301
+total_right, total_predict, predict_right: 225297, 225968, 215303
+precision, recall, and f1: 0.953, 0.956, 0.954
+Epoch id: 28, Training steps: 100, Loss: 0.007114
+Epoch id: 28, Training steps: 200, Loss: 0.007437
+Epoch id: 28, Training steps: 300, Loss: 0.000587
+Epoch id: 28, Training steps: 400, Loss: 0.006395
+total_right, total_predict, predict_right: 225297, 225412, 214844
+precision, recall, and f1: 0.953, 0.954, 0.953
+Epoch id: 29, Training steps: 100, Loss: 0.014875
+Epoch id: 29, Training steps: 200, Loss: 0.004375
+Epoch id: 29, Training steps: 300, Loss: 0.001101
+Epoch id: 29, Training steps: 400, Loss: 0.007246
+total_right, total_predict, predict_right: 225297, 224707, 214543
+precision, recall, and f1: 0.955, 0.952, 0.954
+Epoch id: 30, Training steps: 100, Loss: 0.004103
+Epoch id: 30, Training steps: 200, Loss: 0.006083
+Epoch id: 30, Training steps: 300, Loss: 0.002974
+Epoch id: 30, Training steps: 400, Loss: 0.006483
+total_right, total_predict, predict_right: 225297, 225816, 215326
+precision, recall, and f1: 0.954, 0.956, 0.955
+Epoch id: 31, Training steps: 100, Loss: 0.006847
+Epoch id: 31, Training steps: 200, Loss: 0.004429
+Epoch id: 31, Training steps: 300, Loss: 0.003039
+Epoch id: 31, Training steps: 400, Loss: 0.010887
+total_right, total_predict, predict_right: 225297, 225280, 215029
+precision, recall, and f1: 0.954, 0.954, 0.954
+Epoch id: 32, Training steps: 100, Loss: 0.000927
+Epoch id: 32, Training steps: 200, Loss: 0.003801
+Epoch id: 32, Training steps: 300, Loss: 0.002952
+Epoch id: 32, Training steps: 400, Loss: 0.003866
+total_right, total_predict, predict_right: 225297, 225816, 215166
+precision, recall, and f1: 0.953, 0.955, 0.954
+Epoch id: 33, Training steps: 100, Loss: 0.009117
+Epoch id: 33, Training steps: 200, Loss: 0.003613
+Epoch id: 33, Training steps: 300, Loss: 0.012608
+Epoch id: 33, Training steps: 400, Loss: 0.004593
+total_right, total_predict, predict_right: 225297, 225276, 214961
+precision, recall, and f1: 0.954, 0.954, 0.954
+Epoch id: 34, Training steps: 100, Loss: 0.004405
+Epoch id: 34, Training steps: 200, Loss: 0.004469
+Epoch id: 34, Training steps: 300, Loss: 0.008917
+Epoch id: 34, Training steps: 400, Loss: 0.007730
+total_right, total_predict, predict_right: 225297, 225641, 215364
+precision, recall, and f1: 0.954, 0.956, 0.955
+Epoch id: 35, Training steps: 100, Loss: 0.001842
+Epoch id: 35, Training steps: 200, Loss: 0.000565
+Epoch id: 35, Training steps: 300, Loss: 0.010294
+Epoch id: 35, Training steps: 400, Loss: 0.005080
+total_right, total_predict, predict_right: 225297, 224863, 214902
+precision, recall, and f1: 0.956, 0.954, 0.955
+Epoch id: 36, Training steps: 100, Loss: 0.004663
+Epoch id: 36, Training steps: 200, Loss: 0.017067
+Epoch id: 36, Training steps: 300, Loss: 0.005297
+Epoch id: 36, Training steps: 400, Loss: 0.001570
+total_right, total_predict, predict_right: 225297, 225630, 215222
+precision, recall, and f1: 0.954, 0.955, 0.955
+Epoch id: 37, Training steps: 100, Loss: 0.002152
+Epoch id: 37, Training steps: 200, Loss: 0.018061
+Epoch id: 37, Training steps: 300, Loss: 0.003302
+Epoch id: 37, Training steps: 400, Loss: 0.003331
+total_right, total_predict, predict_right: 225297, 225258, 215147
+precision, recall, and f1: 0.955, 0.955, 0.955
+Epoch id: 38, Training steps: 100, Loss: 0.000245
+Epoch id: 38, Training steps: 200, Loss: 0.006081
+Epoch id: 38, Training steps: 300, Loss: 0.004692
+Epoch id: 38, Training steps: 400, Loss: 0.000721
+total_right, total_predict, predict_right: 225297, 224808, 214752
+precision, recall, and f1: 0.955, 0.953, 0.954
+Epoch id: 39, Training steps: 100, Loss: 0.001479
+Epoch id: 39, Training steps: 200, Loss: 0.003225
+Epoch id: 39, Training steps: 300, Loss: 0.022169
+Epoch id: 39, Training steps: 400, Loss: 0.003317
+total_right, total_predict, predict_right: 225297, 224986, 214878
+precision, recall, and f1: 0.955, 0.954, 0.954
+Epoch id: 40, Training steps: 100, Loss: 0.002533
+Epoch id: 40, Training steps: 200, Loss: 0.005493
+Epoch id: 40, Training steps: 300, Loss: 0.006571
+Epoch id: 40, Training steps: 400, Loss: 0.002529
+total_right, total_predict, predict_right: 225297, 225220, 214992
+precision, recall, and f1: 0.955, 0.954, 0.954
+Epoch id: 41, Training steps: 100, Loss: 0.002096
+Epoch id: 41, Training steps: 200, Loss: 0.012328
+Epoch id: 41, Training steps: 300, Loss: 0.000501
+Epoch id: 41, Training steps: 400, Loss: 0.006210
+total_right, total_predict, predict_right: 225297, 225083, 215073
+precision, recall, and f1: 0.956, 0.955, 0.955
+Epoch id: 42, Training steps: 100, Loss: 0.000443
+Epoch id: 42, Training steps: 200, Loss: 0.005641
+Epoch id: 42, Training steps: 300, Loss: 0.004730
+Epoch id: 42, Training steps: 400, Loss: 0.005616
+total_right, total_predict, predict_right: 225297, 225012, 215104
+precision, recall, and f1: 0.956, 0.955, 0.955
+Epoch id: 43, Training steps: 100, Loss: 0.002545
+Epoch id: 43, Training steps: 200, Loss: 0.007574
+Epoch id: 43, Training steps: 300, Loss: 0.007990
+Epoch id: 43, Training steps: 400, Loss: 0.006456
+total_right, total_predict, predict_right: 225297, 225441, 215042
+precision, recall, and f1: 0.954, 0.954, 0.954
+Epoch id: 44, Training steps: 100, Loss: 0.000956
+Epoch id: 44, Training steps: 200, Loss: 0.010517
+Epoch id: 44, Training steps: 300, Loss: 0.003202
+Epoch id: 44, Training steps: 400, Loss: 0.000365
+total_right, total_predict, predict_right: 225297, 225067, 214708
+precision, recall, and f1: 0.954, 0.953, 0.953
+Epoch id: 45, Training steps: 100, Loss: 0.003195
+Epoch id: 45, Training steps: 200, Loss: 0.008978
+Epoch id: 45, Training steps: 300, Loss: 0.002804
+Epoch id: 45, Training steps: 400, Loss: 0.005448
+total_right, total_predict, predict_right: 225297, 225387, 215231
+precision, recall, and f1: 0.955, 0.955, 0.955
+Epoch id: 46, Training steps: 100, Loss: 0.009004
+Epoch id: 46, Training steps: 200, Loss: 0.002636
+Epoch id: 46, Training steps: 300, Loss: 0.000840
+Epoch id: 46, Training steps: 400, Loss: 0.000636
+total_right, total_predict, predict_right: 225297, 225477, 215131
+precision, recall, and f1: 0.954, 0.955, 0.954
+Epoch id: 47, Training steps: 100, Loss: 0.002174
+Epoch id: 47, Training steps: 200, Loss: 0.012490
+Epoch id: 47, Training steps: 300, Loss: 0.003001
+Epoch id: 47, Training steps: 400, Loss: 0.012218
+total_right, total_predict, predict_right: 225297, 225211, 215079
+precision, recall, and f1: 0.955, 0.955, 0.955
+Epoch id: 48, Training steps: 100, Loss: 0.008673
+Epoch id: 48, Training steps: 200, Loss: 0.004946
+Epoch id: 48, Training steps: 300, Loss: 0.002439
+Epoch id: 48, Training steps: 400, Loss: 0.001687
+total_right, total_predict, predict_right: 225297, 225509, 215302
+precision, recall, and f1: 0.955, 0.956, 0.955
+Epoch id: 49, Training steps: 100, Loss: 0.002087
+Epoch id: 49, Training steps: 200, Loss: 0.000986
+Epoch id: 49, Training steps: 300, Loss: 0.005617
+Epoch id: 49, Training steps: 400, Loss: 0.006081
+total_right, total_predict, predict_right: 225297, 224942, 215087
+precision, recall, and f1: 0.956, 0.955, 0.955
+Epoch id: 50, Training steps: 100, Loss: 0.001518
+Epoch id: 50, Training steps: 200, Loss: 0.007259
+Epoch id: 50, Training steps: 300, Loss: 0.002665
+Epoch id: 50, Training steps: 400, Loss: 0.001070
+total_right, total_predict, predict_right: 225297, 224928, 214960
+precision, recall, and f1: 0.956, 0.954, 0.955
+Start evaluation.
+total_right, total_predict, predict_right: 104371, 103068, 96596
+precision, recall, and f1: 0.937, 0.926, 0.931
+Loading the Glove Embedding...
+Embedding size:  300
+Transitions:  tensor([[    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [-1000., -1000., -1000., -1000., -1000., -1000., -1000.]])
+4 GPUs are available. Let's use them.
+Using the criterion func in the model...
+--------------- The 4-th fold as the validation set... ---------------
+Epoch id: 1, Training steps: 100, Loss: 1.356445
+Epoch id: 1, Training steps: 200, Loss: 0.912269
+Epoch id: 1, Training steps: 300, Loss: 0.703453
+Epoch id: 1, Training steps: 400, Loss: 0.655052
+total_right, total_predict, predict_right: 230838, 232819, 211698
+precision, recall, and f1: 0.909, 0.917, 0.913
+Epoch id: 2, Training steps: 100, Loss: 0.430886
+Epoch id: 2, Training steps: 200, Loss: 0.296127
+Epoch id: 2, Training steps: 300, Loss: 0.376919
+Epoch id: 2, Training steps: 400, Loss: 0.436609
+total_right, total_predict, predict_right: 230838, 230216, 215983
+precision, recall, and f1: 0.938, 0.936, 0.937
+Epoch id: 3, Training steps: 100, Loss: 0.267836
+Epoch id: 3, Training steps: 200, Loss: 0.180902
+Epoch id: 3, Training steps: 300, Loss: 0.187098
+Epoch id: 3, Training steps: 400, Loss: 0.304331
+total_right, total_predict, predict_right: 230838, 227597, 215866
+precision, recall, and f1: 0.948, 0.935, 0.942
+Epoch id: 4, Training steps: 100, Loss: 0.278145
+Epoch id: 4, Training steps: 200, Loss: 0.116086
+Epoch id: 4, Training steps: 300, Loss: 0.107016
+Epoch id: 4, Training steps: 400, Loss: 0.164757
+total_right, total_predict, predict_right: 230838, 228834, 217593
+precision, recall, and f1: 0.951, 0.943, 0.947
+Epoch id: 5, Training steps: 100, Loss: 0.174019
+Epoch id: 5, Training steps: 200, Loss: 0.041718
+Epoch id: 5, Training steps: 300, Loss: 0.060428
+Epoch id: 5, Training steps: 400, Loss: 0.221489
+total_right, total_predict, predict_right: 230838, 231554, 219814
+precision, recall, and f1: 0.949, 0.952, 0.951
+Epoch id: 6, Training steps: 100, Loss: 0.069852
+Epoch id: 6, Training steps: 200, Loss: 0.081787
+Epoch id: 6, Training steps: 300, Loss: 0.042873
+Epoch id: 6, Training steps: 400, Loss: 0.092457
+total_right, total_predict, predict_right: 230838, 230608, 219353
+precision, recall, and f1: 0.951, 0.950, 0.951
+Epoch id: 7, Training steps: 100, Loss: 0.020168
+Epoch id: 7, Training steps: 200, Loss: 0.053909
+Epoch id: 7, Training steps: 300, Loss: 0.096968
+Epoch id: 7, Training steps: 400, Loss: 0.036522
+total_right, total_predict, predict_right: 230838, 231588, 219930
+precision, recall, and f1: 0.950, 0.953, 0.951
+Epoch id: 8, Training steps: 100, Loss: 0.054604
+Epoch id: 8, Training steps: 200, Loss: 0.079840
+Epoch id: 8, Training steps: 300, Loss: 0.049351
+Epoch id: 8, Training steps: 400, Loss: 0.036207
+total_right, total_predict, predict_right: 230838, 231583, 220038
+precision, recall, and f1: 0.950, 0.953, 0.952
+Epoch id: 9, Training steps: 100, Loss: 0.028702
+Epoch id: 9, Training steps: 200, Loss: 0.035765
+Epoch id: 9, Training steps: 300, Loss: 0.025902
+Epoch id: 9, Training steps: 400, Loss: 0.032808
+total_right, total_predict, predict_right: 230838, 233016, 220366
+precision, recall, and f1: 0.946, 0.955, 0.950
+Epoch id: 10, Training steps: 100, Loss: 0.027736
+Epoch id: 10, Training steps: 200, Loss: 0.022675
+Epoch id: 10, Training steps: 300, Loss: 0.027342
+Epoch id: 10, Training steps: 400, Loss: 0.018564
+total_right, total_predict, predict_right: 230838, 231680, 220080
+precision, recall, and f1: 0.950, 0.953, 0.952
+Epoch id: 11, Training steps: 100, Loss: 0.013615
+Epoch id: 11, Training steps: 200, Loss: 0.011433
+Epoch id: 11, Training steps: 300, Loss: 0.015570
+Epoch id: 11, Training steps: 400, Loss: 0.034199
+total_right, total_predict, predict_right: 230838, 231169, 220093
+precision, recall, and f1: 0.952, 0.953, 0.953
+Epoch id: 12, Training steps: 100, Loss: 0.023825
+Epoch id: 12, Training steps: 200, Loss: 0.009514
+Epoch id: 12, Training steps: 300, Loss: 0.018682
+Epoch id: 12, Training steps: 400, Loss: 0.017899
+total_right, total_predict, predict_right: 230838, 231074, 220091
+precision, recall, and f1: 0.952, 0.953, 0.953
+Epoch id: 13, Training steps: 100, Loss: 0.012917
+Epoch id: 13, Training steps: 200, Loss: 0.013645
+Epoch id: 13, Training steps: 300, Loss: 0.010727
+Epoch id: 13, Training steps: 400, Loss: 0.007208
+total_right, total_predict, predict_right: 230838, 231400, 220286
+precision, recall, and f1: 0.952, 0.954, 0.953
+Epoch id: 14, Training steps: 100, Loss: 0.010578
+Epoch id: 14, Training steps: 200, Loss: 0.008886
+Epoch id: 14, Training steps: 300, Loss: 0.030041
+Epoch id: 14, Training steps: 400, Loss: 0.013132
+total_right, total_predict, predict_right: 230838, 230962, 220017
+precision, recall, and f1: 0.953, 0.953, 0.953
+Epoch id: 15, Training steps: 100, Loss: 0.009098
+Epoch id: 15, Training steps: 200, Loss: 0.008982
+Epoch id: 15, Training steps: 300, Loss: 0.014833
+Epoch id: 15, Training steps: 400, Loss: 0.011629
+total_right, total_predict, predict_right: 230838, 231052, 220113
+precision, recall, and f1: 0.953, 0.954, 0.953
+Epoch id: 16, Training steps: 100, Loss: 0.018330
+Epoch id: 16, Training steps: 200, Loss: 0.004229
+Epoch id: 16, Training steps: 300, Loss: 0.010883
+Epoch id: 16, Training steps: 400, Loss: 0.016951
+total_right, total_predict, predict_right: 230838, 230676, 219989
+precision, recall, and f1: 0.954, 0.953, 0.953
+Epoch id: 17, Training steps: 100, Loss: 0.001654
+Epoch id: 17, Training steps: 200, Loss: 0.021376
+Epoch id: 17, Training steps: 300, Loss: 0.006666
+Epoch id: 17, Training steps: 400, Loss: 0.005539
+total_right, total_predict, predict_right: 230838, 230196, 219639
+precision, recall, and f1: 0.954, 0.951, 0.953
+Epoch id: 18, Training steps: 100, Loss: 0.011183
+Epoch id: 18, Training steps: 200, Loss: 0.008640
+Epoch id: 18, Training steps: 300, Loss: 0.015884
+Epoch id: 18, Training steps: 400, Loss: 0.020470
+total_right, total_predict, predict_right: 230838, 231458, 220504
+precision, recall, and f1: 0.953, 0.955, 0.954
+Epoch id: 19, Training steps: 100, Loss: 0.025045
+Epoch id: 19, Training steps: 200, Loss: 0.005215
+Epoch id: 19, Training steps: 300, Loss: 0.007725
+Epoch id: 19, Training steps: 400, Loss: 0.004652
+total_right, total_predict, predict_right: 230838, 229927, 219706
+precision, recall, and f1: 0.956, 0.952, 0.954
+Epoch id: 20, Training steps: 100, Loss: 0.009075
+Epoch id: 20, Training steps: 200, Loss: 0.014696
+Epoch id: 20, Training steps: 300, Loss: 0.009418
+Epoch id: 20, Training steps: 400, Loss: 0.007307
+total_right, total_predict, predict_right: 230838, 231060, 220130
+precision, recall, and f1: 0.953, 0.954, 0.953
+Epoch id: 21, Training steps: 100, Loss: 0.007231
+Epoch id: 21, Training steps: 200, Loss: 0.002632
+Epoch id: 21, Training steps: 300, Loss: 0.006151
+Epoch id: 21, Training steps: 400, Loss: 0.003185
+total_right, total_predict, predict_right: 230838, 230465, 219830
+precision, recall, and f1: 0.954, 0.952, 0.953
+Epoch id: 22, Training steps: 100, Loss: 0.010498
+Epoch id: 22, Training steps: 200, Loss: 0.015308
+Epoch id: 22, Training steps: 300, Loss: 0.012339
+Epoch id: 22, Training steps: 400, Loss: 0.010571
+total_right, total_predict, predict_right: 230838, 230519, 220099
+precision, recall, and f1: 0.955, 0.953, 0.954
+Epoch id: 23, Training steps: 100, Loss: 0.005281
+Epoch id: 23, Training steps: 200, Loss: 0.009802
+Epoch id: 23, Training steps: 300, Loss: 0.003544
+Epoch id: 23, Training steps: 400, Loss: 0.004082
+total_right, total_predict, predict_right: 230838, 230795, 220196
+precision, recall, and f1: 0.954, 0.954, 0.954
+Epoch id: 24, Training steps: 100, Loss: 0.006157
+Epoch id: 24, Training steps: 200, Loss: 0.007025
+Epoch id: 24, Training steps: 300, Loss: 0.000727
+Epoch id: 24, Training steps: 400, Loss: 0.013680
+total_right, total_predict, predict_right: 230838, 231065, 220344
+precision, recall, and f1: 0.954, 0.955, 0.954
+Epoch id: 25, Training steps: 100, Loss: 0.015928
+Epoch id: 25, Training steps: 200, Loss: 0.004868
+Epoch id: 25, Training steps: 300, Loss: 0.003191
+Epoch id: 25, Training steps: 400, Loss: 0.015287
+total_right, total_predict, predict_right: 230838, 231353, 220434
+precision, recall, and f1: 0.953, 0.955, 0.954
+Epoch id: 26, Training steps: 100, Loss: 0.002161
+Epoch id: 26, Training steps: 200, Loss: 0.005068
+Epoch id: 26, Training steps: 300, Loss: 0.001040
+Epoch id: 26, Training steps: 400, Loss: 0.006958
+total_right, total_predict, predict_right: 230838, 230517, 220123
+precision, recall, and f1: 0.955, 0.954, 0.954
+Epoch id: 27, Training steps: 100, Loss: 0.005951
+Epoch id: 27, Training steps: 200, Loss: 0.013739
+Epoch id: 27, Training steps: 300, Loss: 0.003700
+Epoch id: 27, Training steps: 400, Loss: 0.001472
+total_right, total_predict, predict_right: 230838, 230652, 220122
+precision, recall, and f1: 0.954, 0.954, 0.954
+Epoch id: 28, Training steps: 100, Loss: 0.021933
+Epoch id: 28, Training steps: 200, Loss: 0.001045
+Epoch id: 28, Training steps: 300, Loss: 0.003071
+Epoch id: 28, Training steps: 400, Loss: 0.006283
+total_right, total_predict, predict_right: 230838, 230176, 219917
+precision, recall, and f1: 0.955, 0.953, 0.954
+Epoch id: 29, Training steps: 100, Loss: 0.001402
+Epoch id: 29, Training steps: 200, Loss: 0.005526
+Epoch id: 29, Training steps: 300, Loss: 0.011938
+Epoch id: 29, Training steps: 400, Loss: 0.000558
+total_right, total_predict, predict_right: 230838, 231441, 220646
+precision, recall, and f1: 0.953, 0.956, 0.955
+Epoch id: 30, Training steps: 100, Loss: 0.000552
+Epoch id: 30, Training steps: 200, Loss: 0.006575
+Epoch id: 30, Training steps: 300, Loss: 0.006761
+Epoch id: 30, Training steps: 400, Loss: 0.008459
+total_right, total_predict, predict_right: 230838, 231271, 220729
+precision, recall, and f1: 0.954, 0.956, 0.955
+Epoch id: 31, Training steps: 100, Loss: 0.003679
+Epoch id: 31, Training steps: 200, Loss: 0.007614
+Epoch id: 31, Training steps: 300, Loss: 0.004333
+Epoch id: 31, Training steps: 400, Loss: 0.006870
+total_right, total_predict, predict_right: 230838, 230405, 219695
+precision, recall, and f1: 0.954, 0.952, 0.953
+Epoch id: 32, Training steps: 100, Loss: 0.002027
+Epoch id: 32, Training steps: 200, Loss: 0.007353
+Epoch id: 32, Training steps: 300, Loss: 0.012344
+Epoch id: 32, Training steps: 400, Loss: 0.007708
+total_right, total_predict, predict_right: 230838, 230811, 220302
+precision, recall, and f1: 0.954, 0.954, 0.954
+Epoch id: 33, Training steps: 100, Loss: 0.002731
+Epoch id: 33, Training steps: 200, Loss: 0.004383
+Epoch id: 33, Training steps: 300, Loss: 0.014484
+Epoch id: 33, Training steps: 400, Loss: 0.010960
+total_right, total_predict, predict_right: 230838, 229827, 219767
+precision, recall, and f1: 0.956, 0.952, 0.954
+Epoch id: 34, Training steps: 100, Loss: 0.015085
+Epoch id: 34, Training steps: 200, Loss: 0.009768
+Epoch id: 34, Training steps: 300, Loss: 0.014819
+Epoch id: 34, Training steps: 400, Loss: 0.000572
+total_right, total_predict, predict_right: 230838, 231790, 220651
+precision, recall, and f1: 0.952, 0.956, 0.954
+Epoch id: 35, Training steps: 100, Loss: 0.009563
+Epoch id: 35, Training steps: 200, Loss: 0.004903
+Epoch id: 35, Training steps: 300, Loss: 0.001111
+Epoch id: 35, Training steps: 400, Loss: 0.009486
+total_right, total_predict, predict_right: 230838, 230816, 220450
+precision, recall, and f1: 0.955, 0.955, 0.955
+Epoch id: 36, Training steps: 100, Loss: 0.003822
+Epoch id: 36, Training steps: 200, Loss: 0.003796
+Epoch id: 36, Training steps: 300, Loss: 0.017321
+Epoch id: 36, Training steps: 400, Loss: 0.001059
+total_right, total_predict, predict_right: 230838, 231291, 220561
+precision, recall, and f1: 0.954, 0.955, 0.955
+Epoch id: 37, Training steps: 100, Loss: 0.001085
+Epoch id: 37, Training steps: 200, Loss: 0.009037
+Epoch id: 37, Training steps: 300, Loss: 0.004427
+Epoch id: 37, Training steps: 400, Loss: 0.004901
+total_right, total_predict, predict_right: 230838, 231518, 220627
+precision, recall, and f1: 0.953, 0.956, 0.954
+Epoch id: 38, Training steps: 100, Loss: 0.016983
+Epoch id: 38, Training steps: 200, Loss: 0.000572
+Epoch id: 38, Training steps: 300, Loss: 0.000930
+Epoch id: 38, Training steps: 400, Loss: 0.001909
+total_right, total_predict, predict_right: 230838, 230601, 220048
+precision, recall, and f1: 0.954, 0.953, 0.954
+Epoch id: 39, Training steps: 100, Loss: 0.002923
+Epoch id: 39, Training steps: 200, Loss: 0.006275
+Epoch id: 39, Training steps: 300, Loss: 0.003042
+Epoch id: 39, Training steps: 400, Loss: 0.001894
+total_right, total_predict, predict_right: 230838, 231628, 220668
+precision, recall, and f1: 0.953, 0.956, 0.954
+Epoch id: 40, Training steps: 100, Loss: 0.003690
+Epoch id: 40, Training steps: 200, Loss: 0.002827
+Epoch id: 40, Training steps: 300, Loss: 0.001710
+Epoch id: 40, Training steps: 400, Loss: 0.001426
+total_right, total_predict, predict_right: 230838, 230953, 220652
+precision, recall, and f1: 0.955, 0.956, 0.956
+Epoch id: 41, Training steps: 100, Loss: 0.004238
+Epoch id: 41, Training steps: 200, Loss: 0.001731
+Epoch id: 41, Training steps: 300, Loss: 0.006327
+Epoch id: 41, Training steps: 400, Loss: 0.014725
+total_right, total_predict, predict_right: 230838, 230966, 220518
+precision, recall, and f1: 0.955, 0.955, 0.955
+Epoch id: 42, Training steps: 100, Loss: 0.002833
+Epoch id: 42, Training steps: 200, Loss: 0.003089
+Epoch id: 42, Training steps: 300, Loss: 0.002474
+Epoch id: 42, Training steps: 400, Loss: 0.004133
+total_right, total_predict, predict_right: 230838, 231499, 220774
+precision, recall, and f1: 0.954, 0.956, 0.955
+Epoch id: 43, Training steps: 100, Loss: 0.002668
+Epoch id: 43, Training steps: 200, Loss: 0.004628
+Epoch id: 43, Training steps: 300, Loss: 0.001863
+Epoch id: 43, Training steps: 400, Loss: 0.002560
+total_right, total_predict, predict_right: 230838, 230697, 220467
+precision, recall, and f1: 0.956, 0.955, 0.955
+Epoch id: 44, Training steps: 100, Loss: 0.001357
+Epoch id: 44, Training steps: 200, Loss: 0.001217
+Epoch id: 44, Training steps: 300, Loss: 0.010948
+Epoch id: 44, Training steps: 400, Loss: 0.001474
+total_right, total_predict, predict_right: 230838, 231134, 220528
+precision, recall, and f1: 0.954, 0.955, 0.955
+Epoch id: 45, Training steps: 100, Loss: 0.001628
+Epoch id: 45, Training steps: 200, Loss: 0.000926
+Epoch id: 45, Training steps: 300, Loss: 0.005509
+Epoch id: 45, Training steps: 400, Loss: 0.005245
+total_right, total_predict, predict_right: 230838, 230602, 220514
+precision, recall, and f1: 0.956, 0.955, 0.956
+Epoch id: 46, Training steps: 100, Loss: 0.003850
+Epoch id: 46, Training steps: 200, Loss: 0.003174
+Epoch id: 46, Training steps: 300, Loss: 0.001640
+Epoch id: 46, Training steps: 400, Loss: 0.011889
+total_right, total_predict, predict_right: 230838, 231024, 220586
+precision, recall, and f1: 0.955, 0.956, 0.955
+Epoch id: 47, Training steps: 100, Loss: 0.000921
+Epoch id: 47, Training steps: 200, Loss: 0.003423
+Epoch id: 47, Training steps: 300, Loss: 0.001124
+Epoch id: 47, Training steps: 400, Loss: 0.009010
+total_right, total_predict, predict_right: 230838, 231127, 220597
+precision, recall, and f1: 0.954, 0.956, 0.955
+Epoch id: 48, Training steps: 100, Loss: 0.000893
+Epoch id: 48, Training steps: 200, Loss: 0.004801
+Epoch id: 48, Training steps: 300, Loss: 0.005147
+Epoch id: 48, Training steps: 400, Loss: 0.003483
+total_right, total_predict, predict_right: 230838, 231290, 220723
+precision, recall, and f1: 0.954, 0.956, 0.955
+Epoch id: 49, Training steps: 100, Loss: 0.003302
+Epoch id: 49, Training steps: 200, Loss: 0.001377
+Epoch id: 49, Training steps: 300, Loss: 0.001338
+Epoch id: 49, Training steps: 400, Loss: 0.000446
+total_right, total_predict, predict_right: 230838, 230142, 220244
+precision, recall, and f1: 0.957, 0.954, 0.956
+Epoch id: 50, Training steps: 100, Loss: 0.000797
+Epoch id: 50, Training steps: 200, Loss: 0.003309
+Epoch id: 50, Training steps: 300, Loss: 0.004476
+Epoch id: 50, Training steps: 400, Loss: 0.001575
+total_right, total_predict, predict_right: 230838, 230906, 220622
+precision, recall, and f1: 0.955, 0.956, 0.956
+Start evaluation.
+total_right, total_predict, predict_right: 104371, 103802, 96536
+precision, recall, and f1: 0.930, 0.925, 0.927
+Loading the Glove Embedding...
+Embedding size:  300
+Transitions:  tensor([[    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [    0.,     0.,     0.,     0.,     0., -1000.,     0.],
+        [-1000., -1000., -1000., -1000., -1000., -1000., -1000.]])
+4 GPUs are available. Let's use them.
+Using the criterion func in the model...
+--------------- The 5-th fold as the validation set... ---------------
+Epoch id: 1, Training steps: 100, Loss: 1.197495
+Epoch id: 1, Training steps: 200, Loss: 1.233833
+Epoch id: 1, Training steps: 300, Loss: 0.427050
+Epoch id: 1, Training steps: 400, Loss: 0.912943
+total_right, total_predict, predict_right: 204747, 203471, 183943
+precision, recall, and f1: 0.904, 0.898, 0.901
+Epoch id: 2, Training steps: 100, Loss: 0.475927
+Epoch id: 2, Training steps: 200, Loss: 0.375190
+Epoch id: 2, Training steps: 300, Loss: 0.510458
+Epoch id: 2, Training steps: 400, Loss: 0.370258
+total_right, total_predict, predict_right: 204747, 204329, 189369
+precision, recall, and f1: 0.927, 0.925, 0.926
+Epoch id: 3, Training steps: 100, Loss: 0.190509
+Epoch id: 3, Training steps: 200, Loss: 0.326284
+Epoch id: 3, Training steps: 300, Loss: 0.277925
+Epoch id: 3, Training steps: 400, Loss: 0.302767
+total_right, total_predict, predict_right: 204747, 203274, 190472
+precision, recall, and f1: 0.937, 0.930, 0.934
+Epoch id: 4, Training steps: 100, Loss: 0.106370
+Epoch id: 4, Training steps: 200, Loss: 0.167948
+Epoch id: 4, Training steps: 300, Loss: 0.246616
+Epoch id: 4, Training steps: 400, Loss: 0.151072
+total_right, total_predict, predict_right: 204747, 204114, 191925
+precision, recall, and f1: 0.940, 0.937, 0.939
+Epoch id: 5, Training steps: 100, Loss: 0.148344
+Epoch id: 5, Training steps: 200, Loss: 0.116737
+Epoch id: 5, Training steps: 300, Loss: 0.102871
+Epoch id: 5, Training steps: 400, Loss: 0.128731
+total_right, total_predict, predict_right: 204747, 205771, 192904
+precision, recall, and f1: 0.937, 0.942, 0.940
+Epoch id: 6, Training steps: 100, Loss: 0.122084
+Epoch id: 6, Training steps: 200, Loss: 0.084789
+Epoch id: 6, Training steps: 300, Loss: 0.056276
+Epoch id: 6, Training steps: 400, Loss: 0.090693
+total_right, total_predict, predict_right: 204747, 203525, 192292
+precision, recall, and f1: 0.945, 0.939, 0.942
+Epoch id: 7, Training steps: 100, Loss: 0.074652
+Epoch id: 7, Training steps: 200, Loss: 0.046738
+Epoch id: 7, Training steps: 300, Loss: 0.061743
+Epoch id: 7, Training steps: 400, Loss: 0.057194
+total_right, total_predict, predict_right: 204747, 204363, 192847
+precision, recall, and f1: 0.944, 0.942, 0.943
+Epoch id: 8, Training steps: 100, Loss: 0.031763
+Epoch id: 8, Training steps: 200, Loss: 0.036039
+Epoch id: 8, Training steps: 300, Loss: 0.083406
+Epoch id: 8, Training steps: 400, Loss: 0.051502
+total_right, total_predict, predict_right: 204747, 204307, 192694
+precision, recall, and f1: 0.943, 0.941, 0.942
+Epoch id: 9, Training steps: 100, Loss: 0.014963
+Epoch id: 9, Training steps: 200, Loss: 0.038538
+Epoch id: 9, Training steps: 300, Loss: 0.042810
+Epoch id: 9, Training steps: 400, Loss: 0.024885
+total_right, total_predict, predict_right: 204747, 204642, 193024
+precision, recall, and f1: 0.943, 0.943, 0.943
+Epoch id: 10, Training steps: 100, Loss: 0.018068
+Epoch id: 10, Training steps: 200, Loss: 0.035574
+Epoch id: 10, Training steps: 300, Loss: 0.009691
+Epoch id: 10, Training steps: 400, Loss: 0.039743
+total_right, total_predict, predict_right: 204747, 205362, 193160
+precision, recall, and f1: 0.941, 0.943, 0.942
+Epoch id: 11, Training steps: 100, Loss: 0.013527
+Epoch id: 11, Training steps: 200, Loss: 0.025625
+Epoch id: 11, Training steps: 300, Loss: 0.026943
+Epoch id: 11, Training steps: 400, Loss: 0.059896
+total_right, total_predict, predict_right: 204747, 204529, 193065
+precision, recall, and f1: 0.944, 0.943, 0.943
+Epoch id: 12, Training steps: 100, Loss: 0.004675
+Epoch id: 12, Training steps: 200, Loss: 0.006493
+Epoch id: 12, Training steps: 300, Loss: 0.019300
+Epoch id: 12, Training steps: 400, Loss: 0.015978
+total_right, total_predict, predict_right: 204747, 204816, 193267
+precision, recall, and f1: 0.944, 0.944, 0.944
+Epoch id: 13, Training steps: 100, Loss: 0.011631
+Epoch id: 13, Training steps: 200, Loss: 0.008766
+Epoch id: 13, Training steps: 300, Loss: 0.013632
+Epoch id: 13, Training steps: 400, Loss: 0.034391
+total_right, total_predict, predict_right: 204747, 204447, 193090
+precision, recall, and f1: 0.944, 0.943, 0.944
+Epoch id: 14, Training steps: 100, Loss: 0.014111
+Epoch id: 14, Training steps: 200, Loss: 0.023180
+Epoch id: 14, Training steps: 300, Loss: 0.026121
+Epoch id: 14, Training steps: 400, Loss: 0.007475
+total_right, total_predict, predict_right: 204747, 204676, 193418
+precision, recall, and f1: 0.945, 0.945, 0.945
+Epoch id: 15, Training steps: 100, Loss: 0.019287
+Epoch id: 15, Training steps: 200, Loss: 0.006510
+Epoch id: 15, Training steps: 300, Loss: 0.003706
+Epoch id: 15, Training steps: 400, Loss: 0.002243
+total_right, total_predict, predict_right: 204747, 204082, 193148
+precision, recall, and f1: 0.946, 0.943, 0.945
+Epoch id: 16, Training steps: 100, Loss: 0.025427
+Epoch id: 16, Training steps: 200, Loss: 0.015656
+Epoch id: 16, Training steps: 300, Loss: 0.005817
+Epoch id: 16, Training steps: 400, Loss: 0.008833
+total_right, total_predict, predict_right: 204747, 204364, 193071
+precision, recall, and f1: 0.945, 0.943, 0.944
+Epoch id: 17, Training steps: 100, Loss: 0.002230
+Epoch id: 17, Training steps: 200, Loss: 0.007902
+Epoch id: 17, Training steps: 300, Loss: 0.028168
+Epoch id: 17, Training steps: 400, Loss: 0.008429
+total_right, total_predict, predict_right: 204747, 203796, 192838
+precision, recall, and f1: 0.946, 0.942, 0.944
+Epoch id: 18, Training steps: 100, Loss: 0.002586
+Epoch id: 18, Training steps: 200, Loss: 0.008200
+Epoch id: 18, Training steps: 300, Loss: 0.012842
+Epoch id: 18, Training steps: 400, Loss: 0.014801
+total_right, total_predict, predict_right: 204747, 204035, 192947
+precision, recall, and f1: 0.946, 0.942, 0.944
+Epoch id: 19, Training steps: 100, Loss: 0.006037
+Epoch id: 19, Training steps: 200, Loss: 0.005266
+Epoch id: 19, Training steps: 300, Loss: 0.015156
+Epoch id: 19, Training steps: 400, Loss: 0.016834
+total_right, total_predict, predict_right: 204747, 203770, 192997
+precision, recall, and f1: 0.947, 0.943, 0.945
+Epoch id: 20, Training steps: 100, Loss: 0.003132
+Epoch id: 20, Training steps: 200, Loss: 0.012115
+Epoch id: 20, Training steps: 300, Loss: 0.021467
+Epoch id: 20, Training steps: 400, Loss: 0.027445
+total_right, total_predict, predict_right: 204747, 204067, 193276
+precision, recall, and f1: 0.947, 0.944, 0.946
+Epoch id: 21, Training steps: 100, Loss: 0.004402
+Epoch id: 21, Training steps: 200, Loss: 0.007263
+Epoch id: 21, Training steps: 300, Loss: 0.009312
+Epoch id: 21, Training steps: 400, Loss: 0.006523
+total_right, total_predict, predict_right: 204747, 204288, 193138
+precision, recall, and f1: 0.945, 0.943, 0.944
+Epoch id: 22, Training steps: 100, Loss: 0.007196
+Epoch id: 22, Training steps: 200, Loss: 0.011900
+Epoch id: 22, Training steps: 300, Loss: 0.006304
+Epoch id: 22, Training steps: 400, Loss: 0.017139
+total_right, total_predict, predict_right: 204747, 203953, 193022
+precision, recall, and f1: 0.946, 0.943, 0.945
+Epoch id: 23, Training steps: 100, Loss: 0.005102
+Epoch id: 23, Training steps: 200, Loss: 0.000963
+Epoch id: 23, Training steps: 300, Loss: 0.010021
+Epoch id: 23, Training steps: 400, Loss: 0.016270
+total_right, total_predict, predict_right: 204747, 204955, 193474
+precision, recall, and f1: 0.944, 0.945, 0.944
+Epoch id: 24, Training steps: 100, Loss: 0.012598
+Epoch id: 24, Training steps: 200, Loss: 0.017345
+Epoch id: 24, Training steps: 300, Loss: 0.004415
+Epoch id: 24, Training steps: 400, Loss: 0.001986
+total_right, total_predict, predict_right: 204747, 204943, 193620
+precision, recall, and f1: 0.945, 0.946, 0.945
+Epoch id: 25, Training steps: 100, Loss: 0.004570
+Epoch id: 25, Training steps: 200, Loss: 0.005020
+Epoch id: 25, Training steps: 300, Loss: 0.008335
+Epoch id: 25, Training steps: 400, Loss: 0.012449
+total_right, total_predict, predict_right: 204747, 203894, 193030
+precision, recall, and f1: 0.947, 0.943, 0.945
+Epoch id: 26, Training steps: 100, Loss: 0.002941
+Epoch id: 26, Training steps: 200, Loss: 0.006264
+Epoch id: 26, Training steps: 300, Loss: 0.009384
+Epoch id: 26, Training steps: 400, Loss: 0.005710
+total_right, total_predict, predict_right: 204747, 204190, 193398
+precision, recall, and f1: 0.947, 0.945, 0.946
+Epoch id: 27, Training steps: 100, Loss: 0.001634
+Epoch id: 27, Training steps: 200, Loss: 0.001503
+Epoch id: 27, Training steps: 300, Loss: 0.004457
+Epoch id: 27, Training steps: 400, Loss: 0.012510
+total_right, total_predict, predict_right: 204747, 203815, 192917
+precision, recall, and f1: 0.947, 0.942, 0.944
+Epoch id: 28, Training steps: 100, Loss: 0.006681
+Epoch id: 28, Training steps: 200, Loss: 0.007689
+Epoch id: 28, Training steps: 300, Loss: 0.012232
+Epoch id: 28, Training steps: 400, Loss: 0.005331
+total_right, total_predict, predict_right: 204747, 204791, 193584
+precision, recall, and f1: 0.945, 0.945, 0.945
+Epoch id: 29, Training steps: 100, Loss: 0.003786
+Epoch id: 29, Training steps: 200, Loss: 0.001261
+Epoch id: 29, Training steps: 300, Loss: 0.009087
+Epoch id: 29, Training steps: 400, Loss: 0.002363
+total_right, total_predict, predict_right: 204747, 203982, 193331
+precision, recall, and f1: 0.948, 0.944, 0.946
+Epoch id: 30, Training steps: 100, Loss: 0.013727
+Epoch id: 30, Training steps: 200, Loss: 0.013512
+Epoch id: 30, Training steps: 300, Loss: 0.009201
+Epoch id: 30, Training steps: 400, Loss: 0.011404
+total_right, total_predict, predict_right: 204747, 203814, 193156
+precision, recall, and f1: 0.948, 0.943, 0.946
+Epoch id: 31, Training steps: 100, Loss: 0.004808
+Epoch id: 31, Training steps: 200, Loss: 0.008192
+Epoch id: 31, Training steps: 300, Loss: 0.003792
+Epoch id: 31, Training steps: 400, Loss: 0.006164
+total_right, total_predict, predict_right: 204747, 204472, 193797
+precision, recall, and f1: 0.948, 0.947, 0.947
+Epoch id: 32, Training steps: 100, Loss: 0.002764
+Epoch id: 32, Training steps: 200, Loss: 0.001814
+Epoch id: 32, Training steps: 300, Loss: 0.000840
+Epoch id: 32, Training steps: 400, Loss: 0.006202
+total_right, total_predict, predict_right: 204747, 204340, 193611
+precision, recall, and f1: 0.947, 0.946, 0.947
+Epoch id: 33, Training steps: 100, Loss: 0.000626
+Epoch id: 33, Training steps: 200, Loss: 0.013020
+Epoch id: 33, Training steps: 300, Loss: 0.005125
+Epoch id: 33, Training steps: 400, Loss: 0.006147
+total_right, total_predict, predict_right: 204747, 203791, 193423
+precision, recall, and f1: 0.949, 0.945, 0.947
+Epoch id: 34, Training steps: 100, Loss: 0.003336
+Epoch id: 34, Training steps: 200, Loss: 0.000921
+Epoch id: 34, Training steps: 300, Loss: 0.000967
+Epoch id: 34, Training steps: 400, Loss: 0.006628
+total_right, total_predict, predict_right: 204747, 203751, 193419
+precision, recall, and f1: 0.949, 0.945, 0.947
+Epoch id: 35, Training steps: 100, Loss: 0.001900
+Epoch id: 35, Training steps: 200, Loss: 0.003725
+Epoch id: 35, Training steps: 300, Loss: 0.005713
+Epoch id: 35, Training steps: 400, Loss: 0.012001
+total_right, total_predict, predict_right: 204747, 204075, 193394
+precision, recall, and f1: 0.948, 0.945, 0.946
+Epoch id: 36, Training steps: 100, Loss: 0.000252
+Epoch id: 36, Training steps: 200, Loss: 0.001295
+Epoch id: 36, Training steps: 300, Loss: 0.004713
+Epoch id: 36, Training steps: 400, Loss: 0.006960
+total_right, total_predict, predict_right: 204747, 204734, 193554
+precision, recall, and f1: 0.945, 0.945, 0.945
+Epoch id: 37, Training steps: 100, Loss: 0.006613
+Epoch id: 37, Training steps: 200, Loss: 0.013853
+Epoch id: 37, Training steps: 300, Loss: 0.006088
+Epoch id: 37, Training steps: 400, Loss: 0.028061
+total_right, total_predict, predict_right: 204747, 204016, 193614
+precision, recall, and f1: 0.949, 0.946, 0.947
+Epoch id: 38, Training steps: 100, Loss: 0.002289
+Epoch id: 38, Training steps: 200, Loss: 0.001884
+Epoch id: 38, Training steps: 300, Loss: 0.004427
+Epoch id: 38, Training steps: 400, Loss: 0.020464
+total_right, total_predict, predict_right: 204747, 204546, 193781
+precision, recall, and f1: 0.947, 0.946, 0.947
+Epoch id: 39, Training steps: 100, Loss: 0.001259
+Epoch id: 39, Training steps: 200, Loss: 0.001793
+Epoch id: 39, Training steps: 300, Loss: 0.000531
+Epoch id: 39, Training steps: 400, Loss: 0.000975
+total_right, total_predict, predict_right: 204747, 203227, 193000
+precision, recall, and f1: 0.950, 0.943, 0.946
+Epoch id: 40, Training steps: 100, Loss: 0.003419
+Epoch id: 40, Training steps: 200, Loss: 0.000592
+Epoch id: 40, Training steps: 300, Loss: 0.007810
+Epoch id: 40, Training steps: 400, Loss: 0.004501
+total_right, total_predict, predict_right: 204747, 205895, 194274
+precision, recall, and f1: 0.944, 0.949, 0.946
+Epoch id: 41, Training steps: 100, Loss: 0.001611
+Epoch id: 41, Training steps: 200, Loss: 0.007444
+Epoch id: 41, Training steps: 300, Loss: 0.002016
+Epoch id: 41, Training steps: 400, Loss: 0.002542
+total_right, total_predict, predict_right: 204747, 204338, 193469
+precision, recall, and f1: 0.947, 0.945, 0.946
+Epoch id: 42, Training steps: 100, Loss: 0.002368
+Epoch id: 42, Training steps: 200, Loss: 0.012012
+Epoch id: 42, Training steps: 300, Loss: 0.001748
+Epoch id: 42, Training steps: 400, Loss: 0.007210
+total_right, total_predict, predict_right: 204747, 204218, 193412
+precision, recall, and f1: 0.947, 0.945, 0.946
+Epoch id: 43, Training steps: 100, Loss: 0.000696
+Epoch id: 43, Training steps: 200, Loss: 0.001194
+Epoch id: 43, Training steps: 300, Loss: 0.001225
+Epoch id: 43, Training steps: 400, Loss: 0.003328
+total_right, total_predict, predict_right: 204747, 204132, 193286
+precision, recall, and f1: 0.947, 0.944, 0.945
+Epoch id: 44, Training steps: 100, Loss: 0.004730
+Epoch id: 44, Training steps: 200, Loss: 0.010138
+Epoch id: 44, Training steps: 300, Loss: 0.002445
+Epoch id: 44, Training steps: 400, Loss: 0.003971
+total_right, total_predict, predict_right: 204747, 204750, 193809
+precision, recall, and f1: 0.947, 0.947, 0.947
+Epoch id: 45, Training steps: 100, Loss: 0.000649
+Epoch id: 45, Training steps: 200, Loss: 0.008745
+Epoch id: 45, Training steps: 300, Loss: 0.007233
+Epoch id: 45, Training steps: 400, Loss: 0.001821
+total_right, total_predict, predict_right: 204747, 203743, 193216
+precision, recall, and f1: 0.948, 0.944, 0.946
+Epoch id: 46, Training steps: 100, Loss: 0.001794
+Epoch id: 46, Training steps: 200, Loss: 0.005335
+Epoch id: 46, Training steps: 300, Loss: 0.003143
+Epoch id: 46, Training steps: 400, Loss: 0.018234
+total_right, total_predict, predict_right: 204747, 204854, 193893
+precision, recall, and f1: 0.946, 0.947, 0.947
+Epoch id: 47, Training steps: 100, Loss: 0.005405
+Epoch id: 47, Training steps: 200, Loss: 0.000686
+Epoch id: 47, Training steps: 300, Loss: 0.006443
+Epoch id: 47, Training steps: 400, Loss: 0.005758
+total_right, total_predict, predict_right: 204747, 204252, 193615
+precision, recall, and f1: 0.948, 0.946, 0.947
+Epoch id: 48, Training steps: 100, Loss: 0.001644
+Epoch id: 48, Training steps: 200, Loss: 0.002707
+Epoch id: 48, Training steps: 300, Loss: 0.002983
+Epoch id: 48, Training steps: 400, Loss: 0.001057
+total_right, total_predict, predict_right: 204747, 204291, 193788
+precision, recall, and f1: 0.949, 0.946, 0.948
+Epoch id: 49, Training steps: 100, Loss: 0.002052
+Epoch id: 49, Training steps: 200, Loss: 0.000646
+Epoch id: 49, Training steps: 300, Loss: 0.000778
+Epoch id: 49, Training steps: 400, Loss: 0.001122
+total_right, total_predict, predict_right: 204747, 203832, 193507
+precision, recall, and f1: 0.949, 0.945, 0.947
+Epoch id: 50, Training steps: 100, Loss: 0.003766
+Epoch id: 50, Training steps: 200, Loss: 0.004528
+Epoch id: 50, Training steps: 300, Loss: 0.012574
+Epoch id: 50, Training steps: 400, Loss: 0.004611
+total_right, total_predict, predict_right: 204747, 203987, 193585
+precision, recall, and f1: 0.949, 0.945, 0.947
+Start evaluation.
+total_right, total_predict, predict_right: 104371, 103730, 96604
+precision, recall, and f1: 0.931, 0.926, 0.928

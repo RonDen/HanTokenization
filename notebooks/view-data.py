@@ -170,6 +170,16 @@ def get_word_length(cnt):
 len_cnt = get_word_length(cnt)
 print(len_cnt)
 
+def less_5_rate():
+    cnt1 = 0
+    cnt2 = 0
+    for leng in len_cnt:
+        if leng <= 5:
+            cnt1 += len_cnt[leng]
+        cnt2 += len_cnt[leng]
+    print(cnt1 / cnt2)
+less_5_rate()
+
 def avg_length():
     res = 0
     tot_word = 0
@@ -190,14 +200,15 @@ def plot_length_cnt():
 
     frqdist = FreqDist(len_cnt)
 
-    plt.figure(figsize=(16, 8))
-    frqdist.plot(len(len_cnt))
-    plt.savefig('训练集词长度频率分布.png')
-    plt.show()
+    # plt.figure(figsize=(16, 8))
+    # frqdist.plot(len(len_cnt))
+    # plt.savefig('训练集词长度频率分布.png')
+    # plt.show()
 
     plt.figure(figsize=(16, 8))
     frqdist.plot(len(len_cnt), cumulative=True)
-    plt.savefig('训练集词长度频率分布-累加.png')
+    plt.tight_layout()
+    plt.savefig('wordlenacc.pdf')
     plt.show()
 
-plot_length_cnt()
+# plot_length_cnt()

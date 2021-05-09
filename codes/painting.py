@@ -44,23 +44,30 @@ def draw_curve(source_paths, colors, labels, target_path, data_type, epochs_num,
     elif data_type == "f1":
         ax.set_ylabel("F1 score")
         ax.set_title("Validation F1 score curve")
-    #plt.show()
+    plt.tight_layout()
     fig.savefig(target_path)
+    plt.show()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument("--data_type", 
         choices=["loss", "f1"],
-        default="loss",
+        default="f1",
         help="What kind of data do you want to draw on the figure.")
     
     args = parser.parse_args()
 
-    source_paths = ["../logs/bilstm_training.out", "../logs/bilstmcrf_training.out"]
-    colors = ["r-", "b-"]
-    labels = ["BiLSTM", "BiLSTM-CRF"]
-    target_path = "../results/" + args.data_type + "_curves.png"
+    source_paths = [
+        "../logs/bilstm_training.out", 
+        "../logs/bilstmcrf_training.out",
+        "../logs/bilstm_new_merge_training.out",
+        "../logs/bilstm_new_merge_random_training.out",
+        "../logs/transformer_new_merge_separate_training.out"
+    ]
+    colors = ["r-", "b-", "y-", "m-", "g-"]
+    labels = ["1", "2", "3", "4", "5"]
+    target_path = "../results/" + args.data_type + "_curves.pdf"
     epochs_num = 50
     report_num = 4
 
