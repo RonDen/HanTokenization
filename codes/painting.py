@@ -67,7 +67,7 @@ if __name__ == "__main__":
     ]
     colors = ["r-", "b-", "y-", "m-", "g-"]
     labels = ["1", "2", "3", "4", "5"]
-    target_path = "../results/" + args.data_type + "_curves.pdf"
+    target_path = "../results/" + args.data_type + "_curves.png"
     epochs_num = 50
     report_num = 4
 
