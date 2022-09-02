@@ -1,5 +1,14 @@
 # HAN中文分词-2021 Spring NLP Homework
 
+### 算法评测效果
+
+![img1](./doc/img1.png)
+
+
+<center class="half">
+    <img src="./doc/img2.png" width="350"/><img src="./doc/img3.png" width="350"/>
+</center>
+
 ### 训练样本词频统计
 
 使用`collection.Counter`和`nltk`相应工具包完成训练集词频统计分析。展示出现次数最多的前80个词。
