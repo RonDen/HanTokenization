@@ -7,8 +7,8 @@
 <center>
   <table>
     <tr>
-      <td> <img src="./doc/img2.png" width="350"/> </td>
-      <td><img src="./doc/img3.png" width="350"/></td>
+      <td> <img src="./doc/img2.png" width="370"/> </td>
+      <td><img src="./doc/img3.png" width="370"/></td>
     </tr>
   </table>
 </center>
@@ -17,9 +17,14 @@
 
 使用`collection.Counter`和`nltk`相应工具包完成训练集词频统计分析。展示出现次数最多的前80个词。
 
-![词频](./notebooks/前80个词的词频.png)
-
-![词频-累加](./notebooks/前80个词的词频-累加.png)
+<center>
+  <table>
+    <tr>
+      <td> <img src="./notebooks/前80个词的词频.png" width="370"/> </td>
+      <td><img src="./notebooks/前80个词的词频-累加.png" width="370"/></td>
+    </tr>
+  </table>
+</center>
 
 完整的训练集词频统计信息见：[vocab-freq.txt](./results/vocab-freq.txt)。
 
@@ -157,9 +162,14 @@ codes/:
 
 训练曲线如下：
 
-![Loss 曲线](./results/loss_curves.png)
-
-![Loss 曲线](./results/f1_curves.png)
+<center>
+  <table>
+    <tr>
+      <td> <img src="./results/loss_curves.png" width="370"/> </td>
+      <td><img src="./results/f1_curves.png" width="370"/></td>
+    </tr>
+  </table>
+</center>
 
 更多实验结果和测试报告见[result](./results/)和[logs](./logs/)文件夹以及[EvalResult.md](./EvalResult.md)文件。
 
@@ -188,7 +198,7 @@ U06:%x[0,0]/%x[1,0]
 # Bigram
 B
 ```
-仅仅使用了十分基础且简单的特征。
+仅仅配置十分基础的几个特征，就能取得很好的效果。
 
 ```txt
 crf min_freq=3, cost=4
