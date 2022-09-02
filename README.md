@@ -4,9 +4,13 @@
 
 ![img1](./doc/img1.png)
 
-
-<center class="half">
-    <img src="./doc/img2.png" width="350"/><img src="./doc/img3.png" width="350"/>
+<center>
+  <table>
+    <tr>
+      <td> <img src="./doc/img2.png" width="350"/> </td>
+      <td><img src="./doc/img3.png" width="350"/></td>
+    </tr>
+  </table>
 </center>
 
 ### 训练样本词频统计
